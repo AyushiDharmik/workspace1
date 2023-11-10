@@ -10,6 +10,12 @@ export class CrudComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+  
   }
+  emailHandler(event)
+    {
+      console.log(event.target.value)
+    }
 
 }
