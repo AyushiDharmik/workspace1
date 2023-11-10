@@ -13,9 +13,10 @@ export class CrudComponent implements OnInit {
     
   
   }
-  emailHandler(event)
+  dataHandler(event)
     {
-      console.log(event.target.value)
+     
+      console.log(event.target.id)
     }
 
 }
