@@ -13,27 +13,35 @@ export class CrudComponent implements OnInit {
     
   
   }
-  dataHandler(event)
+  
+indiData:object={email:" ",password:" ",isReady:false};
+  userData:object[]=[{}];
+ 
+  dataHandler(event){
+    let ids:string = event.target.id;
+    let data:any =event.target.value;
+ 
+    switch (ids)
     {
-      let ids:string=event.target.id;
-      let data:any=event.target.value;
-      switch(ids)
-      {
-        case "emId":
-          this.indiData.email=data;
+      case "EMID":
+        this.indiData={...this.indiData,email:data};
         break;
-        case "psId":
-          this.indiData.=data;
+      case "PSID":
+        this.indiData.password=data;
         break;
-        case "chId":
-          this.indiData.=data;
+      case "CHID":
+        this.indiData.isReady=data;
         break;
-        case "emId":
-          this.indiData.=data;
+      case "btn1":
+        console.log(this.indiData);
+        this.userData.push(this.indiData);
+        console.log(this.userData);
         break;
-        
-      }
-      console.log(event.target.id)
+      default:
+        break;
+     
     }
+    console.log(event.target.id);
+  }
 
 }

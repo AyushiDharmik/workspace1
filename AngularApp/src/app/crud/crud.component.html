@@ -1,22 +1,26 @@
-<p>crud works!</p>
-<form>
-    <label>Email Address</label>
-    <br>
-    <input type="Email" (keyup)="dataHandler($event)"/>
-    <br><br>
-
-    <label>Password</label>
-    <br>
-    <input type="password"/>
-    <br><br>
-
-    <input type="Submit" value="Submit"/>
-    <br><br>
-
-</form>
-
-<table>
-    <tr >
-        <td></td>
-    </tr>
+<div>
+    <form>
+        <div class="form-group" >
+            <label>Email</label>
+            <input type="email" (keyup)="dataHandler($event)" id="EMID"/>
+        </div><br>
+        <div class="form-group" >
+            <label>Password</label>
+            <input type="password" (keyup)="dataHandler($event)" id="PSID"/>
+        </div><br>
+        <div class="form-check" >
+            <input type="checkbox" (click)="dataHandler($event)" id="CHID"/>
+            <label>Check me</label>
+        </div><br>
+        <button type="submit" class="btn btn-primary" id="btn1">Submit</button>
+     
+    </form>
+    <table>
+        <tr *ngFor="let i of userData">
+            <td>{{i.email}}</td>
+            <td>{{i.password}}</td>
+            <td>{{i.isReady}}</td>
+        </tr>
     </table>
+    </div>
+     
