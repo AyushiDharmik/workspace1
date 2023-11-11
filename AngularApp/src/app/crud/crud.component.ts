@@ -13,7 +13,7 @@ export class CrudComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  date=new Date();
   indiData: object = { email: " ", password: " ", isReady: false };
   userData: object[] = [{}];
 
