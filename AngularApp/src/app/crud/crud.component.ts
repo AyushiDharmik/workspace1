@@ -31,7 +31,8 @@ export class CrudComponent implements OnInit {
         break;
 
       case "CHID":
-        this.indiData = { ...this.indiData, isReady: data };
+        let chkVal=event.target.chaecked;
+        this.indiData = { ...this.indiData, isReady: chkVal };
         break;
 
       case "btn1":
@@ -39,7 +40,7 @@ export class CrudComponent implements OnInit {
         this.userData.push(this.indiData);
         console.log(this.userData);
         break;
-        
+
       default:
         break;
 
