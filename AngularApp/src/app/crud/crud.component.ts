@@ -16,6 +16,14 @@ export class CrudComponent implements OnInit {
   date=new Date();
   money:number=10000;
 
+  empData:object[]=[
+    {empId:1,name:'Ayushi',loc:'Nagpur',salary:90000},
+    {empId:2,name:'Rudra',loc:'Latur',salary:90000},
+    {empId:3,name:'Chaitali',loc:'Nanded',salary:90000},
+    {empId:4,name:'Siddhi',loc:'Latur',salary:90000},
+    {empId:5,name:'Neha',loc:'Nagpur',salary:90000}
+  ]
+
   indiData: object = { email: " ", password: " ", isReady: false };
   userData: object[] = [{}];
 

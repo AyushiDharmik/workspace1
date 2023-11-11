@@ -28,5 +28,16 @@
             <td>{{i.isReady}}</td>
         </tr>
     </table>
+
+    <table class="table">
+        
+        <tr *ngFor="let i of empData">
+            <td>{{i.empId}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.loc}}</td>
+            <td>{{i.salary | currency:'INR'}}</td>
+        </tr>
+    </table>
+
     </div>
      
