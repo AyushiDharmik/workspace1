@@ -1,5 +1,7 @@
 <div>
-    {{Date | 'date'}}
+    {{date | date:'dd/MM/yyyy'}}
+    <p>{{money | currency:'INR':'code'}}</p>
+
     <form>
         <div class="form-group" >
             <label>Email</label><br>
