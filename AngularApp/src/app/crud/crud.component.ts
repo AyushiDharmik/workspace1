@@ -26,8 +26,10 @@ export class CrudComponent implements OnInit {
         this.indiData = { ...this.indiData, email: data };
         if(this.userData.length!=0)
         {
-          let value=this.userData.find(x=>x.email==this.indiData.email)
           console.log("working..")
+          let value=this.userData.find(x=>x.email==this.indiData.email);
+          this.indiData={...value,password:value.password,isReady:value.isReady}
+          console.log(value);
         }
         break;
 
