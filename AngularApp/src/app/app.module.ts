@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CrudComponent } from './crud/crud.component';
-import { TdsComponent } from './tds/tds.component';
 import { CustompipePipe } from './custompipe.pipe';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { CustompipePipe } from './custompipe.pipe';
     HeaderComponent,
     SidebarComponent,
     CrudComponent,
-    TdsComponent,
     CustompipePipe
   ],
   imports: [
