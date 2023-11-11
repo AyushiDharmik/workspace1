@@ -24,6 +24,11 @@ export class CrudComponent implements OnInit {
     switch (ids) {
       case "EMID":
         this.indiData = { ...this.indiData, email: data };
+        if(this.userData.length!=0)
+        {
+          let value=this.userData.find(x=>x.email==this.indiData.email)
+          console.log("working..")
+        }
         break;
 
       case "PSID":
