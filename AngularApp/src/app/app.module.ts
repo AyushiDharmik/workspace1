@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CrudComponent } from './crud/crud.component';
+import { TdsComponent } from './tds/tds.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    CrudComponent
+    CrudComponent,
+    TdsComponent
   ],
   imports: [
     BrowserModule,
