@@ -3,7 +3,10 @@
 
     <label>First Name</label>
     <br>
-    <input type="text" name="Fname" required ngModel/>
+    <input type="text" #Fnamelement="ngModel" name="Fname" required ngModel/>
+    <div *ngIf="Fnamelement.invalid && Fnamelement.touched ">
+        Name is Required
+    </div>
     <br><br>
 
     <label>Last Name</label>
@@ -11,5 +14,5 @@
     <input type="text" name="Lname" required ngModel/>
     <br><br>
 
-    <button [disabled]="userData.valid" class="btn btn-primary" type ="submit">Save</button>
+    <button [disabled]="userData.invalid" class="btn btn-primary" type ="submit">Save</button>
 </form>
