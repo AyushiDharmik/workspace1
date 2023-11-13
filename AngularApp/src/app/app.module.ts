@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CrudComponent } from './crud/crud.component';
 import { CustompipePipe } from './custompipe.pipe';
 import { FormsModule } from '@angular/forms';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     CrudComponent,
-    CustompipePipe
+    CustompipePipe,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
