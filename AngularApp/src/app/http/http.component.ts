@@ -12,7 +12,7 @@ export class HttpComponent implements OnInit {
   constructor(http:HttpClient)
   {
     this._http = http;
-    this._http.get("https://www.google.com").subscribe((data)=>{
+    this._http.get("https://").subscribe((data)=>{
       console.log(data);
     },
     (error)=>{console.log(error);
