@@ -1,17 +1,22 @@
 <!-- <p>template-form works!</p> -->
+<h3>User Details</h3>
+<br>
 <form #userData="ngForm" (ngSubmit)="submitData(userData)">
 
     <label>First Name</label>
     <br>
-    <input type="text" #Fnamelement="ngModel" name="Fname" required ngModel/>
-    <div *ngIf="Fnamelement.invalid && Fnamelement.touched ">
-        Name is Required
+    <input type="text" #Fname="ngModel" name="Fname" required ngModel/>
+    <div  style="color: red;" *ngIf="Fname.invalid && Fname.touched ">
+        First name is required.
     </div>
     <br><br>
 
     <label>Last Name</label>
     <br>
-    <input type="text" name="Lname" required ngModel/>
+    <input type="text" #Lname="ngModel" name="Lname" required ngModel/>
+    <div style="color: red;" *ngIf="Lname.invalid && Lname.touched">
+        Last name is required.
+    </div>
     <br><br>
 
     <button [disabled]="userData.invalid" class="btn btn-primary" type ="submit">Save</button>
