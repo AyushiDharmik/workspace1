@@ -12,10 +12,10 @@ export class HttpComponent implements OnInit {
   constructor(http:HttpClient)
   {
     this._http = http;
-    this._http.get("https://").subscribe((data)=>{
+    this._http.get("https://8080-cabbaacddbbbfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Department/ListDept").subscribe((data)=>{
       console.log(data);
     },
-    (error)=>{console.log(error);
+    (failure)=>{console.log(failure);
     });
     // this._http.post();
     // this._http.put();
