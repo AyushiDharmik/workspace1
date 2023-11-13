@@ -1,9 +1,9 @@
 <p>template-form works!</p>
-<form (ngSubmit)="submitData()">
+<form #userData="ngForm" (ngSubmit)="submitData(userData)">
 
     <input type="text" name="Fname" ngModel/>
     <br>
-    <input type="'text" name="Lname" ngModel/>
+    <input type="text" name="Lname" ngModel/>
     <br>
-    <button class="btn btn-primary" type ="Submit">Save</button>
+    <button class="btn btn-primary" type ="submit">Save</button>
 </form>
