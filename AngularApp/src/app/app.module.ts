@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CrudComponent } from './crud/crud.component';
 import { CustompipePipe } from './custompipe.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { CustompipePipe } from './custompipe.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-  
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
