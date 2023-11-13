@@ -15,9 +15,9 @@ export class TemplateFormComponent implements OnInit {
 
   submitData(form:NgForm)
   {
-    form.value
-    form.valid
-    form.invalid
-    console.log
+    // console.log(form.value)
+    // console.log(form.valid)
+    // console.log(form.invalid)
+    // console.log(form.valid)
   }
 }
