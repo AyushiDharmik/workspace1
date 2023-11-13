@@ -15,6 +15,7 @@ export class TemplateFormComponent implements OnInit {
 
   submitData(form:NgForm)
   {
+    let salary : number=40000;
     console.log(form.value)
     console.log(form.valid)
     // console.log(form.invalid)
