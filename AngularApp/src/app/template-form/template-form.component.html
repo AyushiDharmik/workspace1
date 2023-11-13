@@ -1,9 +1,13 @@
-<p>template-form works!</p>
+<!-- <p>template-form works!</p> -->
 <form #userData="ngForm" (ngSubmit)="submitData(userData)">
 
-    <input type="text" name="Fname" ngModel/>
+    <label>First Name</label>
     <br>
-    <input type="text" name="Lname" ngModel/>
+    <input type="text" name="Fname" required ngModel/>
+    <br><br>
+    <label>last Name</label>
     <br>
+    <!-- <input type="text" name="Lname" required ngModel/> -->
+    <br><br>
     <button class="btn btn-primary" type ="submit">Save</button>
 </form>
