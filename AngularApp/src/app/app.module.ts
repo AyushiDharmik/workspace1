@@ -9,6 +9,8 @@ import { CrudComponent } from './crud/crud.component';
 import { CustompipePipe } from './custompipe.pipe';
 import { FormsModule } from '@angular/forms';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     SidebarComponent,
     CrudComponent,
     CustompipePipe,
-    TemplateFormComponent
+    TemplateFormComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
