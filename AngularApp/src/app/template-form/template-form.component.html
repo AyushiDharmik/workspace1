@@ -5,9 +5,11 @@
     <br>
     <input type="text" name="Fname" required ngModel/>
     <br><br>
-    <label>last Name</label>
+
+    <label>Last Name</label>
     <br>
-    <!-- <input type="text" name="Lname" required ngModel/> -->
+    <input type="text" name="Lname" required ngModel/>
     <br><br>
-    <button class="btn btn-primary" type ="submit">Save</button>
+
+    <button [disabled]="userData.valid" class="btn btn-primary" type ="submit">Save</button>
 </form>
