@@ -12,12 +12,17 @@ export class HttpComponent implements OnInit {
   constructor(http:HttpClient)
   {
     this._http = http;
+    this._http = get("http:0.0.0.0:8080/weatherforecast").subscribe((data)=>{
+      console.log(data);
+    },
+    (error)=>{console.log(data);
+    });
+    // this._http = post();
+    // this._http = put();
+
   }
 
   ngOnInit() {
   }
-
-  
- 
 
 }
