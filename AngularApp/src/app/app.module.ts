@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DemoRouteComponent } from './demo-route/demo-route.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     CrudComponent,
     CustompipePipe,
     TemplateFormComponent,
-    HttpComponent
+    HttpComponent,
+    DemoRouteComponent
   ],
   imports: [
     BrowserModule,
