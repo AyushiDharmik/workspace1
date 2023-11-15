@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {ServiceUtilitiesService} from "./service-utilities.service";
+import { ServiceUtilitiesService } from '../service-utilities.service';
 @Component({
   selector: 'app-demo-route',
   templateUrl: './demo-route.component.html',
@@ -14,6 +14,7 @@ export class DemoRouteComponent implements OnInit {
 
    handleRoute()
    {
+    this.hello.sayHelloWorld();
     this.route.navigate(["/form"]);
    }
 

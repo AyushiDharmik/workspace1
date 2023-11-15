@@ -13,6 +13,7 @@ import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DemoRouteComponent } from './demo-route/demo-route.component';
 import { SorryComponent } from './sorry/sorry.component';
+import { ServiceUtilitiesService } from './service-utilities.service';
 
 @NgModule({
   declarations: [
