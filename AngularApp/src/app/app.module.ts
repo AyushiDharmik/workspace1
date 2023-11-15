@@ -25,14 +25,16 @@ import { SorryComponent } from './sorry/sorry.component';
     HttpComponent,
     DemoRouteComponent,
     SorryComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceUtilitiesService
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,ServiceUtilitiesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
