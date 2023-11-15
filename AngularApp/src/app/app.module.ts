@@ -33,7 +33,6 @@ import { ServiceUtilitiesService } from './service-utilities.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ServiceUtilitiesService
   ],
   providers: [HttpClientModule,ServiceUtilitiesService],
   bootstrap: [AppComponent]

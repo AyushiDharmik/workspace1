@@ -7,7 +7,7 @@ import { ServiceUtilitiesService } from '../service-utilities.service';
   styleUrls: ['./demo-route.component.css']
 })
 export class DemoRouteComponent implements OnInit {
-
+hello:any;
   constructor(private route:Router) {
 
    }
