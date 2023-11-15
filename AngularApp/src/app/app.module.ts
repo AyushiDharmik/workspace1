@@ -12,6 +12,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DemoRouteComponent } from './demo-route/demo-route.component';
+import { SorryComponent } from './sorry/sorry.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DemoRouteComponent } from './demo-route/demo-route.component';
     CustompipePipe,
     TemplateFormComponent,
     HttpComponent,
-    DemoRouteComponent
+    DemoRouteComponent,
+    SorryComponent
   ],
   imports: [
     BrowserModule,

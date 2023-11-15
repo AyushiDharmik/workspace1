@@ -5,7 +5,8 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 
 const routes: Routes = [
   {path:'', component: DemoRouteComponent },
-  {path:'form',component:TemplateFormComponent }
+  {path:'form',component:TemplateFormComponent },
+  {path:'**',component:TemplateFormComponent }
 ];
 
 @NgModule({
