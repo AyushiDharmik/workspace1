@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-demo-route',
   templateUrl: './demo-route.component.html',
@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class DemoRouteComponent implements OnInit {
 
   constructor(private route:Router) {
-    
+
+   }
+
+   handleRoute()
+   {
+    this.route.navigate(["/form"]);
    }
 
   ngOnInit() {
