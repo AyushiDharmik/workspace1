@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-template-form',
@@ -8,7 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute) {
+    console.log(activatedRoute.snapshot.paramMap.get('id'));
+   }
+
+   ngOnDestroy()
+   {
+    console.log("destroy");
+   }
 
   ngOnInit() {
   }

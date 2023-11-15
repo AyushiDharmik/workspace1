@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoRouteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) {
+    
+   }
 
   ngOnInit() {
   }
