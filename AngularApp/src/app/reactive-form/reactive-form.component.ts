@@ -22,7 +22,7 @@ export class ReactiveFormComponent implements OnInit {
 
   saveData()
   {
-    console.log("submit");
+    console.log(this.form.value);
   }
 
 }
