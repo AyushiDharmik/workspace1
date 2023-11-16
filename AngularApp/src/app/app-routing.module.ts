@@ -7,7 +7,7 @@ import { RouterGuardService } from './router-guard.service';
 
 const routes: Routes = [
   {path:'', component: DemoRouteComponent },
-  // {path:'form',component:TemplateFormComponent },
+  {path:'form',component:TemplateFormComponent },
   {path:'form/:id',component:TemplateFormComponent, canActivate:[RouterGuardService]},
   {path:'**',component:SorryComponent }
 ];
