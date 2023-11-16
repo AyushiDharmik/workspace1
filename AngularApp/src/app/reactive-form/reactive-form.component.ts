@@ -20,17 +20,22 @@ export class ReactiveFormComponent implements OnInit {
 
   });
 
-  saveData()
-  {
-    console.log(this.form.value);
+  // saveData()
+  // {
+  //   console.log(this.form.value);
     
-  }
-  error:string="";
+  // }
+  error1:string="";
+  error2:string="";
   display()
   {
     if(this.form.get('email').hasError('required'))
     {
-      this.error="Email is required"
+      this.error1="Email is required";
+    }
+    if(this.form.get('password').hasError('required'))
+    {
+      this.error2="Password is required";
     }
     console.log(this.form.invalid);
   }

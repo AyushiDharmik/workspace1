@@ -1,11 +1,13 @@
 <p>reactive-form works!</p>
-<form [formGroup]="form" (ngSubmit)="saveData()">
+<form [formGroup]="form" (ngSubmit)="display()">
     <div>
-        <input [formControl]="email" type="text" formControlName="email"/>
+        <input [formControl]="email" type="text" formControlName="email"/><br>
+        <div style="color: red;">{{error1}}</div>
     </div>
 
     <div>
-        <input [formControl]="password" type="password" formControlName="password"/>
+        <input [formControl]="password" type="password" formControlName="password"/><br>
+        <div style="color: red;">{{error2}}</div>
     </div>
 
     <button type="submit">Save</button>
