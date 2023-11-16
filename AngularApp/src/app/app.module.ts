@@ -15,6 +15,8 @@ import { DemoRouteComponent } from './demo-route/demo-route.component';
 import { SorryComponent } from './sorry/sorry.component';
 import { ServiceUtilitiesService } from './service-utilities.service';
 import { RouterGuardService } from './router-guard.service';
+import { TokenizationComponent } from './tokenization/tokenization.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,17 @@ import { RouterGuardService } from './router-guard.service';
     TemplateFormComponent,
     HttpComponent,
     DemoRouteComponent,
-    SorryComponent
+    SorryComponent,
+    TokenizationComponent,
+    ReactiveFormComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [HttpClientModule,ServiceUtilitiesService,RouterGuardService],
   bootstrap: [AppComponent]
