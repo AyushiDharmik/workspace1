@@ -15,14 +15,24 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   form=new FormGroup({
-    email:new FormControl(''),
-    password:new FormControl('')
+    email:new FormControl('',[Validators.required]),
+    password:new FormControl('',[Validators.required])
 
   });
 
   saveData()
   {
     console.log(this.form.value);
+    
+  }
+  error:string="";
+  display()
+  {
+    if(this.form.get('email').hasError('required'))
+    {
+      this.error="Email is required"
+    }
+    console.log(this.form.invalid);
   }
 
 }

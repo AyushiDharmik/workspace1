@@ -1,11 +1,11 @@
 <p>reactive-form works!</p>
 <form [formGroup]="form" (ngSubmit)="saveData()">
     <div>
-        <input [formControl]="email" type="text"/>
+        <input [formControl]="email" type="text" formControlName="email"/>
     </div>
 
     <div>
-        <input [formControl]="password" type="text"/>
+        <input [formControl]="password" type="password" formControlName="password"/>
     </div>
 
     <button type="submit">Save</button>
