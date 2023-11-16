@@ -17,6 +17,7 @@ import { ServiceUtilitiesService } from './service-utilities.service';
 import { RouterGuardService } from './router-guard.service';
 import { TokenizationComponent } from './tokenization/tokenization.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     DemoRouteComponent,
     SorryComponent,
     TokenizationComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    LifeCycleComponent
     
   ],
   imports: [
