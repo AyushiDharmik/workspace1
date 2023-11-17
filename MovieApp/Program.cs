@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<MovieContext>(OptionsBuilderConfigurationExtensions=>
-options.SqlServer(builder.Configuration.GetConnectionString("con")));
+builder.Services.AddDbContext<MovieContext>(options=>
+options.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 
 var app = builder.Build();
 
