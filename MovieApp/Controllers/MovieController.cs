@@ -17,7 +17,7 @@ public class MovieController : ControllerBase
    [Route("ShowMovies")]
    public IActionResult GetShowMovies()
    {
-       var data = context.Movie_VMs.FromSqlInterpolated<Movie_VM>($"MovieInfo");
+       var data = context.Movie_VMs;
        return Ok(data);
    }
  
