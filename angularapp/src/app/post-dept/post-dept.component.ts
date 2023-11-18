@@ -24,6 +24,6 @@ export class PostDeptComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveData
+  saveData(u)
 
 }
