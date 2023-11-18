@@ -10,7 +10,7 @@ import { CrudService } from '../service/crud.service';
 })
 export class GetDeptComponent implements OnInit {
 
-  deptData:IDepartment[]=[]
+  deptData:any[]=[]
 
   constructor(private cs:CrudService) {
     this.cs.getAllDept().subscribe(data=>{this.deptData.push(...data); console.log(data)})
