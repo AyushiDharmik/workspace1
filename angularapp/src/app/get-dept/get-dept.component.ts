@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IDepartment } from '../model/idepartment';
-import { HttpClient } from '@angular/common/http';
 import { CrudService } from '../service/crud.service';
 
 

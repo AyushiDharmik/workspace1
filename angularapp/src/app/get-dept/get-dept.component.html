@@ -1,1 +1,19 @@
-<p>get-dept works!</p>
+<div class="container">
+    <div class="jumbotron">
+        <table class="table">
+            <th>Department Id</th>
+            <th>Department Name</th>
+           
+
+            <tr *ngFor="let d of deptData">
+                <td>{{d.departmentId}}</td>
+                <td>{{d.departmentName}}</td>
+                
+                <!-- <td><a [routerLink]="['/Getonemovie/',m.id]">DETAILS</a></td>
+                <td><a [routerLink]="['/EditMovies/',m.id]">EDIT</a></td>
+                <td><a [routerLink]="['/DeleteMoviesLink/',m.id]">DELETE</a></td> -->
+            </tr>
+        </table>
+        <!-- <a routerLink="/AddMovieslink">Add</a> -->
+    </div>
+</div>
