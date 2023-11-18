@@ -13,7 +13,7 @@ export class PostDeptComponent implements OnInit {
   }
   moviedata:IMovie={Id:0, Name:'',YearRelease:0, Rating:0}
 
-  constructor(private ms:MovieServService, private route:Router) { }
+  constructor(private cs:MovieServService, private route:Router) { }
   saveData(m:IMovie):void{
     this.moviedata=m
     this.ms.AddMovies(this.moviedata).subscribe(()=>{alert("Recordas added successfully")
