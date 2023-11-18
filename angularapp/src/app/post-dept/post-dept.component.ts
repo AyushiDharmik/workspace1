@@ -19,7 +19,7 @@ export class PostDeptComponent implements OnInit {
     // this.deptData=d
     this.cs.AddDept(this.deptData).subscribe((data)=>
     {console.log(data)},error=>{
-      console.log()
+      console.log(error);
     })
     
     this.route.navigate(["/getDept"])})
