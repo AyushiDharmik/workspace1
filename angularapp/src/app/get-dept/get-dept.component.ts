@@ -13,7 +13,7 @@ export class GetDeptComponent implements OnInit {
   deptData:IDepartment[]=[]
 
   constructor(private cs:CrudService) {
-    this.cs.getAllDept().subscribe(data=>{this.deptData.push(...data)})
+    this.cs.getAllDept().subscribe(data=>{this.deptData.push(...data); console.log(data)})
    }
 
   ngOnInit() {

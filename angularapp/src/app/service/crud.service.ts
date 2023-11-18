@@ -22,9 +22,9 @@ export class CrudService {
     return this.httpclient.get<IDepartment[]>(this.url)
   }
 
-  AddDept(deptData:IDepartment):Observable<IDepartment[]>
+  AddDept(deptData:any):Observable<any>
   {
-    return this.httpclient.post<IDepartment[]>(this.url+"/savedept",deptData,this.httpOptions)
+    return this.httpclient.post<any>(this.url+"/savedept",deptData,this.httpOptions)
   }
 
 

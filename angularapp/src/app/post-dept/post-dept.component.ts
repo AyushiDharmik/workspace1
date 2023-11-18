@@ -11,18 +11,21 @@ import { NgForm } from '@angular/forms';
 })
 export class PostDeptComponent implements OnInit {
 
-  deptData:IDepartment={departmentId:0,departmentName:' ',employees:null}
+  
 
   constructor(private cs:CrudService, private route:Router) { }
 
   saveData(userData:NgForm):void{
-    // this.deptData=d
-    this.cs.AddDept(this.deptData).subscribe((data)=>
-    {console.log(data)},error=>{
-      console.log(error);
-    })
-    
-    this.route.navigate(["/getDept"])})
+   let deptData:object=
+    { departmentId:0,
+      departmentName:userData.controls['dname'].value,
+      employees:null
+    }
+
+    this.cs.AddDept(deptData).subscribe((data)=>
+    {console.log(data)}
+    // ,error=>{console.log(error);}
+    )
   }
 
   ngOnInit() {
