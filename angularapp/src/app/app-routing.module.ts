@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostDeptComponent } from './post-dept/post-dept.component';
 
 
+
 const routes: Routes = [
-  {path:'post',component:PostDeptComponent}
+  {path:'postdept',component:PostDeptComponent}
 ];
 
 @NgModule({

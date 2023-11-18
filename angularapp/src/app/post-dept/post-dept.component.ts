@@ -14,14 +14,16 @@ export class PostDeptComponent implements OnInit {
 
   constructor(private cs:CrudService, private route:Router) { }
 
-  saveData(userData:IDepartment):void{
-    // this.deptData=d
-    this.cs.AddDept(this.deptData).subscribe(()=>{alert("Recordas added successfully")
+  // saveData(userData:IDepartment):void{
+  //   // this.deptData=d
+  //   this.cs.AddDept(this.deptData).subscribe(()=>{alert("Recordas added successfully")
     
-    this.route.navigate(["/"])})
-  }
+  //   this.route.navigate(["/DisplayDept"])})
+  // }
 
   ngOnInit() {
   }
+
+  saveData
 
 }

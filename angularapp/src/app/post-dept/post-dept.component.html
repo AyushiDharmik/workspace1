@@ -1,4 +1,4 @@
-<form #userData="ngForm" (ngSubmit)="SaveData(userdata)">
+<form #userData="ngForm" (ngSubmit)="saveData(userData)">
     <!-- <label>Department Id:</label>
     <br>
     <input type="text" #dId="ngModel" name="dId" required ngModel/>
@@ -7,8 +7,10 @@
  
     <label>Department Name:</label>
     <br>
-    <input type="text" #dname="ngModel" name="dname" required ngModel/>
+    <input type="text" name="dname" #dname="ngModel" required ngModel/>
     <br><br>
+
+    <button class="btn btn-primary" type="submit">Add</button>
   
 
 </form>
