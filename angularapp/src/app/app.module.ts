@@ -6,17 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GetDeptComponent } from './get-dept/get-dept.component';
+import { PostDeptComponent } from './post-dept/post-dept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetDeptComponent
+    GetDeptComponent,
+    PostDeptComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClient,
     HttpClientModule
     
   ],
