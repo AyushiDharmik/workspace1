@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GetDeptComponent } from './get-dept/get-dept.component';
 import { PostDeptComponent } from './post-dept/post-dept.component';
+import { CrudService } from './service/crud.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { PostDeptComponent } from './post-dept/post-dept.component';
     HttpClientModule
     
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

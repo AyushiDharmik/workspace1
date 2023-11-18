@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../service/crud.service';
+import { IDepartment } from '../model/idepartment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-dept',
@@ -8,16 +10,15 @@ import { CrudService } from '../service/crud.service';
 })
 export class PostDeptComponent implements OnInit {
 
-  constructor(private cs:CrudService) { 
+  deptData:IDepartment={departmentId:0,departmentName:''}
 
-  }
-  moviedata:IMovie={Id:0, Name:'',YearRelease:0, Rating:0}
+  constructor(private cs:CrudService, private route:Router) { }
 
-  constructor(private cs:MovieServService, private route:Router) { }
-  saveData(m:IMovie):void{
-    this.moviedata=m
-    this.ms.AddMovies(this.moviedata).subscribe(()=>{alert("Recordas added successfully")
-    this.route.navigate(["/DisplayMovies"])})
+  saveData(userData:IDepartment):void{
+    // this.deptData=d
+    this.cs.AddDept(this.deptData).subscribe(()=>{alert("Recordas added successfully")
+    
+    this.route.navigate(["/"])})
   }
 
   ngOnInit() {
