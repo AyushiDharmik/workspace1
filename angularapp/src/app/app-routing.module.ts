@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostDeptComponent } from './post-dept/post-dept.component';
+import { GetDeptComponent } from './get-dept/get-dept.component';
 
 
 
 const routes: Routes = [
-  {path:'postdept',component:PostDeptComponent}
+  {path:'',component:GetDeptComponent},
+  {path:'postdept',component:PostDeptComponent},
+  {path:'DisplayDept',component:GetDeptComponent}
 ];
 
 @NgModule({

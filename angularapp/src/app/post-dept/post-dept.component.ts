@@ -21,7 +21,8 @@ export class PostDeptComponent implements OnInit {
       departmentName:userData.controls['dname'].value,
       employees:null
     }
-    this.cs.AddDept(deptData).subscribe()
+    this.cs.AddDept(deptData).subscribe(()=>
+    this.route.navigate(["/DisplayDept"]));
   }
 
   ngOnInit() {
