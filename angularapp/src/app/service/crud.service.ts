@@ -14,7 +14,9 @@ export class CrudService {
 
   // httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
 
-  getAllDept(): Observable<IDepartment> {
-    return this.httpclient.get<IDepartment>(this.url )
+  getAllDept(): Observable<IDepartment[]> {
+    return this.httpclient.get<IDepartment[]>(this.url )
   }
+
+
 }
