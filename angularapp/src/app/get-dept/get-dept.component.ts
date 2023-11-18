@@ -19,9 +19,4 @@ export class GetDeptComponent implements OnInit {
   ngOnInit() {
   }
 
- 
-
-
-  
-
 }
