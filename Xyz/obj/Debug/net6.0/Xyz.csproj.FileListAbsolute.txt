@@ -1,0 +1,7 @@
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.csproj.AssemblyReference.cache
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.AssemblyInfoInputs.cache
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.AssemblyInfo.cs
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/Xyz/obj/Debug/net6.0/Xyz.MvcApplicationPartsAssemblyInfo.cache
