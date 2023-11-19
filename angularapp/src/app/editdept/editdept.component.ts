@@ -10,27 +10,32 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./editdept.component.css']
 })
 export class EditdeptComponent implements OnInit {
-
-  constructor(private cs:CrudService, private route:Router, private ar:ActivatedRoute) { }
-  deptData:IDepartment={departmentId:0, departmentName:""}
   departmentId:number
- 
- 
+  deptData:IDepartment={departmentId:0,departmentName:"",employees:null}
+  
+  constructor(private cs:CrudService, private route:Router, private activatedRoute:ActivatedRoute) { }
+  
+
   ngOnInit() {
-    const tid=this.ar.snapshot.paramMap.get('departmentId');
-    this.departmentId=Number(tid);
-    this.FindId(this.departmentId);
+    const tid=this.activatedRoute.snapshot.paramMap.get('departmentId')
+    this.departmentId=Number(tid)
+    this.FindId(this.departmentId)
   }
-  Findbyid(departmentId:number){
-    this.cs.Findbyid(departmentId).subscribe((data:IDepartment)=>this.deptData=data);
+ 
+  FindId(departmentId:number){
+    this.cs.FindId(departmentId).subscribe((data:IDepartment)=>this.deptData=data)
   }
-  EditData(userData:NgForm){
+
+ 
+  EditData(userData:NgForm):void
+  {
     let deptData:IDepartment={
-      departmentId:this.deptData.departmentId,
-      departmentName:userData.controls["departmentName"].value
+      departmentId: this.deptData.departmentId,
+      departmentName: userData.controls["departmentName"].value,
+      employees: null
     }
     this.cs.EditDept(deptData).subscribe(()=>
-      this.route.navigate(["/DisplayDept"]))
+    this.route.navigate(["/DisplayDept"]));
   }
 
 }
