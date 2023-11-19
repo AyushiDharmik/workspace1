@@ -26,7 +26,7 @@ export class DeletedeptComponent implements OnInit {
   }
 
  
-  deleteData(userData:NgForm):void
+  deleteData(userDelete:NgForm):void
   {
     this.cs.DeleteDept(this.departmentId).subscribe(()=>
     this.route.navigate(["/DisplayDept"]));
