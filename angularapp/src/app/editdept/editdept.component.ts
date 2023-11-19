@@ -11,25 +11,26 @@ import { NgForm } from '@angular/forms';
 })
 export class EditdeptComponent implements OnInit {
 
-  constructor(private cs:CrudService, private route:Router, private activatedRoute:ActivatedRoute) { }
-  deptdata:IDepartment
+  constructor(private cs:CrudService, private route:Router, private ar:ActivatedRoute) { }
+  deptData:IDepartment={departmentId:0, departmentName:""}
   departmentId:number
-
+ 
+ 
   ngOnInit() {
-    const tid=this.activatedRoute.snapshot.paramMap.get('departmentId')
-    this.departmentId=Number(tid)
-    this.Findbyid(this.departmentId)
+    const tid=this.ar.snapshot.paramMap.get('departmentId');
+    this.departmentId=Number(tid);
+    this.FindId(this.departmentId);
   }
- 
   Findbyid(departmentId:number){
-    this.cs.FindId(departmentId).subscribe((data:IDepartment)=>this.deptdata=data)
+    this.cs.Findbyid(departmentId).subscribe((data:IDepartment)=>this.deptData=data);
   }
-
- 
-  EditData(userEdit:NgForm):void
-  {
-    this.cs.EditDept(this.departmentId,this.deptdata).subscribe(()=>
-    this.route.navigate(["/DisplayDept"]));
+  EditData(userData:NgForm){
+    let deptData:IDepartment={
+      departmentId:this.deptData.departmentId,
+      departmentName:userData.controls["departmentName"].value
+    }
+    this.cs.EditDept(deptData).subscribe(()=>
+      this.route.navigate(["/DisplayDept"]))
   }
 
 }

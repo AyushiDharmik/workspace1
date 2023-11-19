@@ -36,10 +36,12 @@ export class CrudService {
     return this.httpclient.delete<IDepartment>(this.url+"?id="+departmentId)
   }
 
-  EditDept(departmentId:number,deptData:any):Observable<any>
+  EditDept(deptData:any):Observable<any>
   {
-    return this.httpclient.put<any>(this.url+"/EditData/"+departmentId,deptData)
+    return this.httpclient.put<any>(this.url+"/EditData/"+deptData.departmentId,deptData,this.httpOptions)
   }
+
+
 
   
 
