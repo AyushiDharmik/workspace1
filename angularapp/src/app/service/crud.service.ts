@@ -7,10 +7,7 @@ import { IDepartment } from '../model/idepartment';
   providedIn: 'root'
 })
 export class CrudService {
-  // saveData(value: any): any {
-  //   throw new Error('Method not implemented.');
-  // }
-
+  
   private url = "https://8080-cabbaacddbbbfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/Department"
   constructor(private httpclient: HttpClient) { }
 
