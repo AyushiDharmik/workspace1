@@ -20,11 +20,6 @@ export class ReactiveFormComponent implements OnInit {
 
   });
 
-  // saveData()
-  // {
-  //   console.log(this.form.value);
-    
-  // }
   error1:string="";
   error2:string="";
   display()
