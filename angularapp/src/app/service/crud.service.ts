@@ -38,7 +38,7 @@ export class CrudService {
 
   EditDept(departmentId:number,deptData:any):Observable<any>
   {
-    return this.httpclient.put<any>(this.url+"?id="+departmentId,deptData)
+    return this.httpclient.put<any>(this.url+"/EditData/"+departmentId,deptData)
   }
 
   

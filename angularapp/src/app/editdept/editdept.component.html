@@ -1,12 +1,12 @@
-<form #userDelete="ngForm" (ngSubmit)="EditData(userDelete)">
+<form #userEdit="ngForm" (ngSubmit)="EditData(userEdit)">
     <label>Department Id:</label>
     <br>
-    <input type="text"  name="departmentId" [ngModel]="deptdata.departmentId" readonly/>
+    <input type="text"  name="departmentId" [ngModel]="deptdata.departmentId" required/>
     <br><br>
  
     <label>Department Name:</label>
     <br>
-    <input type="text" name="departmentName" [ngModel]="deptdata.departmentName" readonly/>
+    <input type="text" name="departmentName" [ngModel]="deptdata.departmentName" required/>
     <br><br>
 
     <button class="btn btn-primary" type="submit">Edit</button>

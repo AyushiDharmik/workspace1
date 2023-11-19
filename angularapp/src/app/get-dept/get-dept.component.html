@@ -12,8 +12,9 @@
                 <td>{{d.departmentName}}</td>
                 
                 <!-- <td><a [routerLink]="['/Getonemovie/',m.id]">DETAILS</a></td>-->
+             
+                <td><a [routerLink]="['/deletedept/',d.departmentId]">delete</a></td>
                 <td><a [routerLink]="['/editdept/',d.departmentId]">Edit</a></td> 
-                <td>    <a [routerLink]="['/deletedept/',d.departmentId]">delete</a></td>
             </tr>
         </table>
         <a [routerLink]="'/postdept'">Add</a><br>

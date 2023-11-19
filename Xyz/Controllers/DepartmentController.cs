@@ -55,6 +55,7 @@ namespace Xyz.Controllers
         }
        
         [HttpPut]
+        [Route("EditData/{id}")]
         public IActionResult Put(int id, Department d)
         {
             var e=db.Departments.FirstOrDefault(e=>e.DepartmentId==id);

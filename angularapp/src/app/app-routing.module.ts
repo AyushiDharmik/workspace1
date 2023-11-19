@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostDeptComponent } from './post-dept/post-dept.component';
 import { GetDeptComponent } from './get-dept/get-dept.component';
 import { DeletedeptComponent } from './deletedept/deletedept.component';
+import { EditdeptComponent } from './editdept/editdept.component';
 
 
 
@@ -11,7 +12,7 @@ const routes: Routes = [
   {path:'postdept',component:PostDeptComponent},
   {path:'DisplayDept',component:GetDeptComponent},
   {path:'deletedept/:departmentId',component:DeletedeptComponent},
-  {path:'editdept/:departmentId',component:DeletedeptComponent}
+  {path:'editdept/:departmentId',component:EditdeptComponent}
 
 ];
 

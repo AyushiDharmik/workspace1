@@ -26,7 +26,7 @@ export class EditdeptComponent implements OnInit {
   }
 
  
-  EditData(userData:NgForm):void
+  EditData(userEdit:NgForm):void
   {
     this.cs.EditDept(this.departmentId,this.deptdata).subscribe(()=>
     this.route.navigate(["/DisplayDept"]));
