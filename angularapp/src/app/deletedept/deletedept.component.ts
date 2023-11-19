@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../service/crud.service';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
+import { IDepartment } from '../model/idepartment';
 
 @Component({
   selector: 'app-deletedept',
@@ -10,10 +11,21 @@ import { Router } from '@angular/router';
 })
 export class DeletedeptComponent implements OnInit {
   
-
-  constructor(private cs:CrudService,  private route:Router) { }
+  constructor(private cs:CrudService, private route:Router, private activatedRoute:ActivatedRoute) { }
+  deptdata:IDepartment={
+    departmentId: 0, departmentName: ' ',
+    employees: null
+  }
+  departmentId:number
 
   ngOnInit() {
+    const tid=this.activatedRoute.snapshot.paramMap.get('departmentId')
+    this.departmentId=Number(tid)
+    this.Findbyid(this.departmentId)
+  }
+ 
+  Findbyid(id:number){
+    this.cs.FindId(id).subscribe((data:IDepartment)=>this.deptdata=data)
   }
 
  
@@ -21,10 +33,6 @@ export class DeletedeptComponent implements OnInit {
   {
     let id:number;
     let deptData:object
-    // { departmentId:0,
-    //   departmentName:userData.controls['dname'].value,
-    //   employees:null
-    // }
     this.cs.DeleteDept(id,deptData).subscribe(()=>
     this.route.navigate(["/DisplayDept"]));
   }
