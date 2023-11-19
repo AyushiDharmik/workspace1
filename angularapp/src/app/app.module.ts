@@ -9,13 +9,15 @@ import { GetDeptComponent } from './get-dept/get-dept.component';
 import { PostDeptComponent } from './post-dept/post-dept.component';
 import { CrudService } from './service/crud.service';
 import { DeletedeptComponent } from './deletedept/deletedept.component';
+import { EditdeptComponent } from './editdept/editdept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetDeptComponent,
     PostDeptComponent,
-    DeletedeptComponent
+    DeletedeptComponent,
+    EditdeptComponent
   ],
   imports: [
     BrowserModule,

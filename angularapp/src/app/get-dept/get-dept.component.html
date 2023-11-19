@@ -11,8 +11,8 @@
                 <td>{{d.departmentId}}</td>
                 <td>{{d.departmentName}}</td>
                 
-                <!-- <td><a [routerLink]="['/Getonemovie/',m.id]">DETAILS</a></td>
-                <td><a [routerLink]="['/EditMovies/',m.id]">EDIT</a></td> -->
+                <!-- <td><a [routerLink]="['/Getonemovie/',m.id]">DETAILS</a></td>-->
+                <td><a [routerLink]="['/editdept/',d.departmentId]">Edit</a></td> 
                 <td>    <a [routerLink]="['/deletedept/',d.departmentId]">delete</a></td>
             </tr>
         </table>

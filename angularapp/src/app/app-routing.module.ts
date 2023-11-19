@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'',component:GetDeptComponent},
   {path:'postdept',component:PostDeptComponent},
   {path:'DisplayDept',component:GetDeptComponent},
-  {path:'deletedept/:departmentId',component:DeletedeptComponent}
+  {path:'deletedept/:departmentId',component:DeletedeptComponent},
+  {path:'editdept/:departmentId',component:DeletedeptComponent}
 
 ];
 
