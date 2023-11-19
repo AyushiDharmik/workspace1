@@ -8,12 +8,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GetDeptComponent } from './get-dept/get-dept.component';
 import { PostDeptComponent } from './post-dept/post-dept.component';
 import { CrudService } from './service/crud.service';
+import { DeletedeptComponent } from './deletedept/deletedept.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetDeptComponent,
-    PostDeptComponent
+    PostDeptComponent,
+    DeletedeptComponent
   ],
   imports: [
     BrowserModule,
