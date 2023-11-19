@@ -20,11 +20,11 @@ export class DeletedeptComponent implements OnInit {
   deleteData(userData:NgForm):void
   {
     let id:number;
-    let deptData:object=
-    { departmentId:0,
-      departmentName:userData.controls['dname'].value,
-      employees:null
-    }
+    let deptData:object
+    // { departmentId:0,
+    //   departmentName:userData.controls['dname'].value,
+    //   employees:null
+    // }
     this.cs.DeleteDept(id,deptData).subscribe(()=>
     this.route.navigate(["/DisplayDept"]));
   }

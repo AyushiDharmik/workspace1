@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IDepartment } from '../model/idepartment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,11 @@ export class CrudService {
   AddDept(deptData:any):Observable<any>
   {
     return this.httpclient.post<any>(this.url+"/savedept",deptData,this.httpOptions)
+  }
+
+  FindId(id:number):Observable<IDepartment>
+  {
+    return this.httpclient.get<IDepartment>(this.url+"/"+id)
   }
 
   DeleteDept(id:number,deptData:any):Observable<any>
