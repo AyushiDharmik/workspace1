@@ -23,24 +23,19 @@ export class CrudService {
     return this.httpclient.post<any>(this.url+"/savedept",deptData,this.httpOptions)
   }
 
-  FindId(departmentId:number):Observable<IDepartment>
+  FindId(departmentId:number):Observable<any>
   {
-    return this.httpclient.get<IDepartment>(this.url+"/"+departmentId)
+    return this.httpclient.get<any>(this.url+"/"+departmentId)
   }
 
-  DeleteDept(departmentId:number):Observable<IDepartment>
+  DeleteDept(departmentId:number):Observable<any>
   {
-    return this.httpclient.delete<IDepartment>(this.url+"?id="+departmentId)
+    return this.httpclient.delete<any>(this.url+"?id="+departmentId)
   }
 
-  EditDept(deptData:IDepartment):Observable<IDepartment>
+  EditDept(deptData:any):Observable<any>
   {
-    return this.httpclient.put<IDepartment>(this.url+"/EditData/"+deptData.departmentId,deptData,this.httpOptions)
+    return this.httpclient.put<any>(this.url+"/EditData/"+deptData.departmentId,deptData,this.httpOptions)
   }
-
-
-
-  
-
     
 }
