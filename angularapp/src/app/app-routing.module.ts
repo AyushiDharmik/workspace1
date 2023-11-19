@@ -15,8 +15,6 @@ const routes: Routes = [
   {path:'getbyid/:departmentId',component:GetbyiddeptComponent},
   {path:'deletedept/:departmentId',component:DeletedeptComponent},
   {path:'editdept/:departmentId',component:EditdeptComponent}
-
-
 ];
 
 @NgModule({
