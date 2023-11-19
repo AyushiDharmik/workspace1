@@ -7,14 +7,11 @@
             <th>get By Id</th>
             <th>Delete action</th>
             <th>Edit action</th>
-
             </thead>
            
-
             <tr *ngFor="let d of deptData">
                 <td>{{d.departmentId}}</td>
                 <td>{{d.departmentName}}</td>
-                
                 <td><a [routerLink]="['/getbyid/',d.departmentId]">Details</a></td>
                 <td><a [routerLink]="['/deletedept/',d.departmentId]">delete</a></td>
                 <td><a [routerLink]="['/editdept/',d.departmentId]">Edit</a></td> 
