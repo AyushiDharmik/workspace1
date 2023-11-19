@@ -12,10 +12,7 @@ import { IDepartment } from '../model/idepartment';
 export class DeletedeptComponent implements OnInit {
   
   constructor(private cs:CrudService, private route:Router, private activatedRoute:ActivatedRoute) { }
-  deptdata:IDepartment={
-    departmentId: 0, departmentId: ' ',
-    employees: null
-  }
+  deptdata:IDepartment
   departmentId:number
 
   ngOnInit() {
@@ -29,7 +26,7 @@ export class DeletedeptComponent implements OnInit {
   }
 
  
-  deleteData():void
+  deleteData(userData:NgForm):void
   {
     this.cs.DeleteDept(this.departmentId).subscribe(()=>
     this.route.navigate(["/DisplayDept"]));
