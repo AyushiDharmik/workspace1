@@ -4,6 +4,10 @@
             <thead style="background-color: rgb(236, 233, 208);">
             <th>Department Id</th>
             <th>Department Name</th>
+            <th>get By Id</th>
+            <th>Delete action</th>
+            <th>Edit action</th>
+
             </thead>
            
 
@@ -11,14 +15,11 @@
                 <td>{{d.departmentId}}</td>
                 <td>{{d.departmentName}}</td>
                 
-                <!-- <td><a [routerLink]="['/Getonemovie/',m.id]">DETAILS</a></td>-->
-             
+                <td><a [routerLink]="['/getbyid/',d.departmentId]">Details</a></td>
                 <td><a [routerLink]="['/deletedept/',d.departmentId]">delete</a></td>
                 <td><a [routerLink]="['/editdept/',d.departmentId]">Edit</a></td> 
             </tr>
         </table>
         <a [routerLink]="'/postdept'">Add</a><br>
-    
-
   
 </div>
