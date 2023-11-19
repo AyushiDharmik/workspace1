@@ -13,7 +13,7 @@ export class DeletedeptComponent implements OnInit {
   
   constructor(private cs:CrudService, private route:Router, private activatedRoute:ActivatedRoute) { }
   deptdata:IDepartment={
-    departmentId: 0, departmentName: ' ',
+    departmentId: 0, departmentId: ' ',
     employees: null
   }
   departmentId:number
@@ -24,16 +24,14 @@ export class DeletedeptComponent implements OnInit {
     this.Findbyid(this.departmentId)
   }
  
-  Findbyid(id:number){
-    this.cs.FindId(id).subscribe((data:IDepartment)=>this.deptdata=data)
+  Findbyid(departmentId:number){
+    this.cs.FindId(departmentId).subscribe((data:IDepartment)=>this.deptdata=data)
   }
 
  
-  deleteData(userData:NgForm):void
+  deleteData():void
   {
-    let id:number;
-    let deptData:object
-    this.cs.DeleteDept(id,deptData).subscribe(()=>
+    this.cs.DeleteDept(this.departmentId).subscribe(()=>
     this.route.navigate(["/DisplayDept"]));
   }
 

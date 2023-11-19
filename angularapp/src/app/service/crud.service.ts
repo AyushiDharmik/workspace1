@@ -26,14 +26,14 @@ export class CrudService {
     return this.httpclient.post<any>(this.url+"/savedept",deptData,this.httpOptions)
   }
 
-  FindId(id:number):Observable<IDepartment>
+  FindId(departmentId:number):Observable<IDepartment>
   {
-    return this.httpclient.get<IDepartment>(this.url+"/"+id)
+    return this.httpclient.get<IDepartment>(this.url+"/"+departmentId)
   }
 
-  DeleteDept(id:number,deptData:any):Observable<any>
+  DeleteDept(departmentId:number):Observable<IDepartment>
   {
-    return this.httpclient.delete<any>(this.url+"?id="+id,deptData)
+    return this.httpclient.delete<IDepartment>(this.url+"?id="+departmentId)
   }
 
   

@@ -12,12 +12,12 @@
                 <td>{{d.departmentName}}</td>
                 
                 <!-- <td><a [routerLink]="['/Getonemovie/',m.id]">DETAILS</a></td>
-                <td><a [routerLink]="['/EditMovies/',m.id]">EDIT</a></td>
-                <td><a [routerLink]="['/DeleteMoviesLink/',m.id]">DELETE</a></td> -->
+                <td><a [routerLink]="['/EditMovies/',m.id]">EDIT</a></td> -->
+                <td>    <a [routerLink]="['/deletedept/',d.departmentId]">delete</a></td>
             </tr>
         </table>
         <a [routerLink]="'/postdept'">Add</a><br>
-        <a [routerLink]="'/deletedept'">delete</a>
+    
 
   
 </div>
