@@ -14,7 +14,7 @@ export class GetempComponent implements OnInit {
   ngOnInit() {
   }
   constructor(private cs:CrudService) {
-    this.cs.getAllDept().subscribe(data=>{this.empData.push(...data); console.log(data)})
+    this.cs.getAllEmp().subscribe(data=>{this.empData.push(...data); console.log(data)})
    }
 
 
