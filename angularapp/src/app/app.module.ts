@@ -13,6 +13,9 @@ import { EditdeptComponent } from './editdept/editdept.component';
 import { GetbyiddeptComponent } from './getbyiddept/getbyiddept.component';
 import { GetempComponent } from './getemp/getemp.component';
 import { MenuComponent } from './menu/menu.component';
+import { PostEmpComponent } from './post-emp/post-emp.component';
+import { DeleteEmpComponent } from './delete-emp/delete-emp.component';
+import { EditEmpComponent } from './edit-emp/edit-emp.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { MenuComponent } from './menu/menu.component';
     EditdeptComponent,
     GetbyiddeptComponent,
     GetempComponent,
-    MenuComponent
+    MenuComponent,
+    PostEmpComponent,
+    DeleteEmpComponent,
+    EditEmpComponent
   ],
   imports: [
     BrowserModule,
