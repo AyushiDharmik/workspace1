@@ -12,6 +12,7 @@ import { DeletedeptComponent } from './deletedept/deletedept.component';
 import { EditdeptComponent } from './editdept/editdept.component';
 import { GetbyiddeptComponent } from './getbyiddept/getbyiddept.component';
 import { GetempComponent } from './getemp/getemp.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GetempComponent } from './getemp/getemp.component';
     DeletedeptComponent,
     EditdeptComponent,
     GetbyiddeptComponent,
-    GetempComponent
+    GetempComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
