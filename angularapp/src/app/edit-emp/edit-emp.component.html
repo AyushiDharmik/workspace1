@@ -1,17 +1,17 @@
 <form #userData="ngForm" (ngSubmit)="editEmpData(userData)">
     <label>Employee Id:</label>
     <br>
-    <input type="text"  name="eId" [ngModel]="empData.eId" readonly />
+    <input type="text"  name="employeeId" [ngModel]="empData.employeeId" readonly />
     <br><br>
  
     <label>Employee Name:</label>
     <br>
-    <input type="text" name="ename" [ngModel]="empData.ename" required />
+    <input type="text" name="employeeName" [ngModel]="empData.employeeName" required />
     <br><br>
 
     <label>Department Id:</label>
     <br>
-    <input type="text"  name="dId" [ngModel]="empData.dId" required />
+    <input type="text"  name="departmentId" [ngModel]="empData.departmentId" required />
     <br><br>
 
     <label>Salary:</label>

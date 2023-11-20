@@ -10,8 +10,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./edit-emp.component.css']
 })
 export class EditEmpComponent implements OnInit {
- employeeId:number
- empData:IEmployee={
+  employeeId:number
+  empData:IEmployee={
    employeeId: 0,
    employeeName: '',
    departmentId: 0,
@@ -23,18 +23,18 @@ export class EditEmpComponent implements OnInit {
   ngOnInit() {
     const tid=this.ar.snapshot.paramMap.get('employeeId')
     this.employeeId=Number(tid)
-    this.cs.FindId(this.employeeId).subscribe((data:IEmployee)=>this.empData=data)
+    this.cs.FindempId(this.employeeId).subscribe((data:IEmployee)=>this.empData=data)
   }
 
   editEmpData(userData:NgForm)
   {
     let empData:IEmployee={
       employeeId: this.empData.employeeId,
-      employeeName:userData.controls['employeeId'].value,
-      departmentId:userData.controls['dId'].value,
+      employeeName:userData.controls['employeeName'].value,
+      departmentId:userData.controls['departmentId'].value,
       salary:userData.controls['salary'].value
     }
-    this.cs.EditDept(empData).subscribe(()=>
+    this.cs.EditEmp(empData).subscribe(()=>
       this.route.navigate(["/DisplayEmp"]))
   }
 
