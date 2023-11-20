@@ -15,17 +15,11 @@ export class EditdeptComponent implements OnInit {
   
   constructor(private cs:CrudService, private route:Router, private activatedRoute:ActivatedRoute) { }
   
-
   ngOnInit() {
     const tid=this.activatedRoute.snapshot.paramMap.get('departmentId')
     this.departmentId=Number(tid)
-    this.FindId(this.departmentId)
+    this.cs.FindId(this.departmentId).subscribe((data:IDepartment)=>this.deptData=data)
   }
- 
-  FindId(departmentId:number){
-    this.cs.FindId(departmentId).subscribe((data:IDepartment)=>this.deptData=data)
-  }
-
  
   EditData(userData:NgForm):void
   {

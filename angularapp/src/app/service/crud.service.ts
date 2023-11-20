@@ -47,7 +47,7 @@ export class CrudService {
 
   AddEmp(empData:any):Observable<any>
   {
-    return this.httpclient.post<any>(this.url2+"/savedept",empData,this.httpOptions)
+    return this.httpclient.post<any>(this.url2+"/savedata",empData,this.httpOptions)
   }
 
   FindempId(employeeId:number):Observable<any>
