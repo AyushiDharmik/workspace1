@@ -30,7 +30,7 @@ export class EditEmpComponent implements OnInit {
   {
     let empData:IEmployee={
       employeeId: this.empData.employeeId,
-      employeeName:userData.controls['ename'].value,
+      employeeName:userData.controls['employeeId'].value,
       departmentId:userData.controls['dId'].value,
       salary:userData.controls['salary'].value
     }
