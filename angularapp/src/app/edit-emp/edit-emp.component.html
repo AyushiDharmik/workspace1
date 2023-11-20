@@ -1,26 +1,26 @@
-<form #userData="ngForm" (ngSubmit)="saveData(userData)">
+<form #userData="ngForm" (ngSubmit)="editEmpData(userData)">
     <label>Employee Id:</label>
     <br>
-    <input type="text"  name="eId" #eId="ngModel" required ngModel/>
+    <input type="text"  name="eId" [ngModel]="empData.eId" readonly />
     <br><br>
  
     <label>Employee Name:</label>
     <br>
-    <input type="text" name="ename" #ename="ngModel" required ngModel/>
+    <input type="text" name="ename" [ngModel]="empData.ename" required />
     <br><br>
 
     <label>Department Id:</label>
     <br>
-    <input type="text"  name="dId" #dId="ngModel" required ngModel/>
+    <input type="text"  name="dId" [ngModel]="empData.dId" required />
     <br><br>
 
     <label>Salary:</label>
     <br>
-    <input type="text"  name="salary" #salary="ngModel" required ngModel/>
+    <input type="text"  name="salary" [ngModel]="empData.salary" required />
     <br><br>
 
 
-    <button class="btn btn-primary" type="submit">Add</button>
+    <button class="btn btn-primary" type="submit">Edit</button>
   
 
 </form>

@@ -26,7 +26,7 @@ export class EditEmpComponent implements OnInit {
     this.cs.FindId(this.employeeId).subscribe((data:IEmployee)=>this.empData=data)
   }
 
-  editData(userData:NgForm)
+  editEmpData(userData:NgForm)
   {
     let empData:IEmployee={
       employeeId: this.empData.employeeId,
