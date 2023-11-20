@@ -1,1 +1,27 @@
-<p>edit-emp works!</p>
+<form #userData="ngForm" (ngSubmit)="saveData(userData)">
+    <label>Employee Id:</label>
+    <br>
+    <input type="text"  name="eId" #eId="ngModel" required ngModel/>
+    <br><br>
+ 
+    <label>Employee Name:</label>
+    <br>
+    <input type="text" name="ename" #ename="ngModel" required ngModel/>
+    <br><br>
+
+    <label>Department Id:</label>
+    <br>
+    <input type="text"  name="dId" #dId="ngModel" required ngModel/>
+    <br><br>
+
+    <label>Salary:</label>
+    <br>
+    <input type="text"  name="salary" #salary="ngModel" required ngModel/>
+    <br><br>
+
+
+    <button class="btn btn-primary" type="submit">Add</button>
+  
+
+</form>
+
