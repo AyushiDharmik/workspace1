@@ -19,7 +19,7 @@ export class PostEmpComponent implements OnInit {
       employeeId:0,
     employeeName:userData.controls['ename'].value,
     departmentId:userData.controls['dId'].value,
-    salary:0
+    salary:userData.controls['salary'].value
     }
     this.cs.AddEmp(empData).subscribe(()=>this.route.navigate(["DisplayEmp"]))
   }
