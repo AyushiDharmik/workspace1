@@ -11,6 +11,7 @@ import { CrudService } from './service/crud.service';
 import { DeletedeptComponent } from './deletedept/deletedept.component';
 import { EditdeptComponent } from './editdept/editdept.component';
 import { GetbyiddeptComponent } from './getbyiddept/getbyiddept.component';
+import { GetempComponent } from './getemp/getemp.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GetbyiddeptComponent } from './getbyiddept/getbyiddept.component';
     PostDeptComponent,
     DeletedeptComponent,
     EditdeptComponent,
-    GetbyiddeptComponent
+    GetbyiddeptComponent,
+    GetempComponent
   ],
   imports: [
     BrowserModule,
