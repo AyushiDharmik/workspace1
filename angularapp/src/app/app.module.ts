@@ -16,6 +16,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PostEmpComponent } from './post-emp/post-emp.component';
 import { DeleteEmpComponent } from './delete-emp/delete-emp.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
+import { GetEmpbyIdComponent } from './get-empby-id/get-empby-id.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditEmpComponent } from './edit-emp/edit-emp.component';
     MenuComponent,
     PostEmpComponent,
     DeleteEmpComponent,
-    EditEmpComponent
+    EditEmpComponent,
+    GetEmpbyIdComponent
   ],
   imports: [
     BrowserModule,

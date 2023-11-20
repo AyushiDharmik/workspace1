@@ -1,1 +1,27 @@
-<p>delete-emp works!</p>
+<form #deleteDeleteData="ngForm" (ngSubmit)="deleteEmpData()">
+    <label>Employee Id:</label>
+    <br>
+    <input type="text"  name="employeeId" [ngModel]="empData.employeeId" readonly />
+    <br><br>
+ 
+    <label>Employee Name:</label>
+    <br>
+    <input type="text" name="employeeName" [ngModel]="empData.employeeName" readonly />
+    <br><br>
+
+    <label>Department Id:</label>
+    <br>
+    <input type="text"  name="departmentId" [ngModel]="empData.departmentId" readonly />
+    <br><br>
+
+    <label>Salary:</label>
+    <br>
+    <input type="text"  name="salary" [ngModel]="empData.salary" readonly />
+    <br><br>
+
+
+    <button class="btn btn-primary" type="submit">Delete</button>
+  
+
+</form>
+

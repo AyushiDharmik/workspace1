@@ -6,7 +6,7 @@
         <th>Employee Name</th>
         <th>Department Id</th>
         <th>Salary</th>
-        <th>get By Id</th>
+        <!-- <th>get By Id</th> -->
         <th>Delete action</th>
         <th>Edit action</th>
         </thead>
@@ -16,8 +16,8 @@
             <td>{{e.employeeName}}</td>
             <td>{{e.departmentId}}</td>
             <td>{{e.salary}}</td>
-            <!-- <td><a [routerLink]="['/getbyEmpid/',e.employeeId">Details</a></td> -->
-            <!-- <td><a [routerLink]="['/deleteEmp/',e.employeeId">delete</a></td> -->
+            <td><a [routerLink]="['/getbyEmpid/',e.employeeId]">Details</a></td>
+            <td><a [routerLink]="['/deleteEmp/',e.employeeId]">delete</a></td>
             <td><a [routerLink]="['/editEmp/',e.employeeId]">Edit</a></td> 
         </tr>
     </table>

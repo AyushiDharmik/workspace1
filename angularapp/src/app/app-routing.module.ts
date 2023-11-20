@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { DeleteEmpComponent } from './delete-emp/delete-emp.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { PostEmpComponent } from './post-emp/post-emp.component';
+import { GetEmpbyIdComponent } from './get-empby-id/get-empby-id.component';
 
 
 
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path:'deletedept/:departmentId',component:DeletedeptComponent},
   {path:'editdept/:departmentId',component:EditdeptComponent},
   {path:'DisplayEmp',component:GetempComponent},
-  // {path:'getbyEmpid/:employeeId',component:GetbyiddeptComponent},
+  {path:'getbyEmpid/:employeeId',component:GetEmpbyIdComponent},
   {path:'postemp',component:PostEmpComponent},
   {path:'deleteEmp/:employeeId',component:DeleteEmpComponent},
   {path:'editEmp/:employeeId',component:EditEmpComponent}

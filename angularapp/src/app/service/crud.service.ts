@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IDepartment } from '../model/idepartment';
+import { IEmployee } from '../model/iemployee';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,7 @@ export class CrudService {
 
   FindempId(employeeId:number):Observable<any>
   {
-    return this.httpclient.get<any>(this.url2+"/"+employeeId)
+    return this.httpclient.get<any>(this.url2+"/Findbyid/"+employeeId)
   }
 
   DeleteEmp(employeeId:number):Observable<any>
@@ -60,9 +61,9 @@ export class CrudService {
     return this.httpclient.delete<any>(this.url2+"?id="+employeeId)
   }
 
-  EditEmp(empData:any):Observable<any>
+  EditEmp(empData:IEmployee):Observable<IEmployee>
   {
-    return this.httpclient.put<any>(this.url2+"/"+empData.departmentId,empData,this.httpOptions)
+    return this.httpclient.put<any>(this.url2+"/"+empData.employeeId,empData,this.httpOptions)
   }
 
 
