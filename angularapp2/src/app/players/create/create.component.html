@@ -2,18 +2,18 @@
 <form #userData="ngForm" (ngSubmit)="createData(userData)">
     <label>Shirt no</label>
     <br>
-    <input type="text" name="shirtno" [ngModel]="shirtno" required />
+    <input type="text" name="shirtno" #shirtno="ngModel" required ngModel />
     <br><br>
 
     <label>Name:</label>
     <br>
-    <input type="text" name="name" [ngModel]="name" required  />
+    <input type="text" name="name" #name="ngModel" required ngModel />
     <br><br>
 
     <label>Position:</label>
     <br>
    
-    <select name="position" [ngModel]="position=" required >
+    <select name="position" #position="ngModel" required ngModel>
         <option>Forward</option>
         <option>Midfielder</option>
     </select>
@@ -22,12 +22,12 @@
 
     <label>Appearances:</label>
     <br>
-    <input type="text" name="appearances" [ngModel]="appearances=" required />
+    <input type="text" name="appearances" #appearances="ngModel" required ngModel />
     <br><br>
 
     <label>Goals:</label>
     <br>
-    <input type="text" name="goals" [ngModel]="goals" required/>
+    <input type="text" name="goals" #goals="ngModel" required ngModel />
     <br><br>
 
     <button class="btn btn-primary" type="submit">Create</button>
