@@ -21,6 +21,7 @@ export class DeletedeptComponent implements OnInit {
     this.Findbyid(this.departmentId)
   }
  
+  
   Findbyid(departmentId:number){
     this.cs.FindId(departmentId).subscribe((data:IDepartment)=>this.deptdata=data)
   }
