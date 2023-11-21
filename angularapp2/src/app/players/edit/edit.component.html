@@ -1,0 +1,36 @@
+<h3>Edit Player</h3><button class="btn btn-secondary" (click)="BackToList()">Back to List</button>
+<form #userData="ngForm" (ngSubmit)="EditData(userData)">
+    <label>Shirt no</label>
+    <br>
+    <input type="text" name="shirtno" [ngModel]="player.shirtno" required  />
+    <br><br>
+
+    <label>Name:</label>
+    <br>
+    <input type="text" name="name" [ngModel]="player.name" required  />
+    <br><br>
+
+    <label>Position:</label>
+    <br>
+    <!-- <input type="text" name="positionid" #positionid="ngModel" required ngModel /> -->
+    <select name="position" [ngModel]="player.position" required >
+        <option>Forward</option>
+        <option>Midfielder</option>
+    </select>
+
+    <br><br>
+
+    <label>Appearances:</label>
+    <br>
+    <input type="text" name="appearances" [ngModel]="player.appearances" required  />
+    <br><br>
+
+    <label>Goals:</label>
+    <br>
+    <input type="text" name="goals" [ngModel]="player.goals" required  />
+    <br><br>
+
+    <button class="btn btn-primary" type="submit">Edit</button>
+
+
+</form>

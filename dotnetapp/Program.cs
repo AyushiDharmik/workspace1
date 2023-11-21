@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using dotnetapp.Models;
 using dotnetapp.Service;
 
@@ -18,15 +17,15 @@ builder.Services.AddDbContext<FootballdbContext>(options =>
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IPlayersService, PlayersService>();
 builder.Services.AddScoped<IPositionsService, PositionsService>();
-builder.Services
-    .AddControllersWithViews()
-    .AddNewtonsoftJson(
-        options =>
-            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
-                .Json
-                .ReferenceLoopHandling
-                .Ignore
-    );
+// builder.Services
+//     .AddControllersWithViews()
+//     .AddNewtonsoftJson(
+//         options =>
+//             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
+//                 .Json
+//                 .ReferenceLoopHandling
+//                 .Ignore
+//     );
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(

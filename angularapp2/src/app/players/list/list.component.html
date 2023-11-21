@@ -1,0 +1,30 @@
+
+
+<div class="container">
+    <h3>Players</h3>
+    <button type="submit" class="btn btn-success" [routerLink]="['/create/']" >Create new</button>
+    <table class="table table-striped">
+        <thead>
+        <th>Id</th>
+        <th>Shirt no</th>
+        <th>Name</th>
+        <th>Position Id</th>
+        <th>Appearances</th>
+        <th>Goals</th>
+        <th>Actions</th>
+        </thead>
+       
+        <tr *ngFor="let p of players">
+            <td>{{p.id}}</td>
+            <td>{{p.shirtno}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.positionid}}</td>
+            <td>{{p.appearances}}</td>
+            <td>{{p.goals}}</td>
+            <td><button type="submit" class="btn btn-danger" [routerLink]="['/edit/',p.id]">Edit</button></td>
+            <td><button type="submit" class="btn btn-primary" [routerLink]="['/delete/',p.id]">delete</button></td>
+            
+        </tr>
+    </table>
+   
+</div>
