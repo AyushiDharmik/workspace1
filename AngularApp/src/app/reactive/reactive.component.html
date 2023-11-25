@@ -1,1 +1,57 @@
 
+<div>
+    <form [formGroup]="demoForm"  (ngSubmit)='display()'>
+    <div>
+      <p>Email</p>
+      <input [formControl]="email" type="text" formControlName="email">
+     <div *ngIf="demoForm.get('email').hasError('email') ">
+      Email not in correct format 
+     </div>
+    </div>
+      <div>
+        <p>Name</p>
+        <input  type="text" formControlName="password">
+           <div *ngIf="demoForm.controls['password'].hasError('required') && !demoForm.get('password').pristine">
+       Required
+           </div>
+       </div>
+        <div>
+        <p>Select Continent</p>
+  
+          <select formControlName="opt">
+            <option>Demo-1</option>
+            <option>Demo-2</option>
+            <option>Demo-3</option>
+          </select>
+        </div>
+        <div>
+         User
+          <input type="radio" name="user" id="rdoo2"  value="user" formControlName="user">
+          Admin
+          <input type="radio" name="user" id="rdoo1" value="admin" formControlName="user">
+          Friend
+          <input type="radio" name="user" id="rdoo3" value="friend" formControlName="user">
+        </div>
+        <div>
+          Male
+           <input type="radio" name="gender" id="rdoo2"  value="Male" formControlName="gender">
+           Female
+           <input type="radio" name="gender" id="rdoo1" value="Female" formControlName="gender">
+          
+         </div>
+        <div>
+          Agree
+          <input type="checkbox" name="chk1" id="chkOne" value="Male" formControlName="chkValue">
+         
+  
+        </div>
+        <div>
+          Date
+                <input type="date" formControlName="startDate" name="startDate" />
+              </div>
+  
+                <div>
+          <button type="submit" [disabled]="demoForm.invalid">Save</button>
+          <button type="button" (click)="reset()">Reset</button>
+        </div>
+    </form>
