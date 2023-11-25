@@ -18,6 +18,7 @@ import { RouterGuardService } from './router-guard.service';
 import { TokenizationComponent } from './tokenization/tokenization.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
     SorryComponent,
     TokenizationComponent,
     ReactiveFormComponent,
-    LifeCycleComponent
+    LifeCycleComponent,
+    ReactiveComponent
     
   ],
   imports: [
