@@ -1,15 +1,23 @@
-<p>reactive-form works!</p>
-<form [formGroup]="form" (ngSubmit)="display()">
-    <div>
-        <input [formControl]="email" type="text" formControlName="email"/><br>
-        <div style="color: red;">{{error1}}</div>
-    </div>
-
-    <div>
-        <input [formControl]="password" type="password" formControlName="password"/><br>
-        <div style="color: red;">{{error2}}</div>
-    </div>
-
-    <button type="submit">Save</button>
-
-</form>`
+<form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" formControlName="fullName">
+  
+    <!-- Add similar elements for other form controls -->
+  
+    <label for="pickupDay">Pickup Day</label>
+    <select id="pickupDay" formControlName="pickupDay">
+      <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+    </select>
+  
+    <label for="pickupTimeSlot">Pickup Time</label>
+    <select id="pickupTimeSlot" formControlName="pickupTimeSlot">
+      <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+    </select>
+  
+    <label for="packageId">Package</label>
+    <select id="packageId" formControlName="packageId">
+      <option *ngFor="let package of preferredPackages" [value]="package">{{ package }}</option>
+    </select>
+  
+    <button type="submit">Submit</button>
+  </form>

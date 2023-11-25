@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormArray, FormControl, FormGroup, Validator } from '@angular/forms';
 
 @Component({
@@ -9,30 +9,40 @@ import { FormArray, FormControl, FormGroup, Validator } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  constructor() { }
+  scheduleForm: FormGroup;
 
-  ngOnInit() {
+  // Define a list of days and time slots
+  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  timeSlots = ['1 pm to 3 pm', '3 pm to 5 pm', '5 pm to 7 pm'];
+
+  // Define a list of preferred packages (replace with your actual package list)
+  preferredPackages = ['Package 1', 'Package 2', 'Package 3'];
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-  form=new FormGroup({
-    email:new FormControl('',[Validators.required]),
-    password:new FormControl('',[Validators.required])
-
-  });
-
-  error1:string="";
-  error2:string="";
-  display()
-  {
-    if(this.form.get('email').hasError('required'))
-    {
-      this.error1="Email is required";
-    }
-    if(this.form.get('password').hasError('required'))
-    {
-      this.error2="Password is required";
-    }
-    console.log(this.form.invalid);
+  createForm() {
+    this.scheduleForm = this.fb.group({
+      fullName: ['', Validators.required],
+      mobileNumber: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      address: ['', Validators.required],
+      area: ['', Validators.required],
+      pincode: ['', Validators.required],
+      pickupDay: ['', Validators.required],
+      pickupTimeSlot: ['', Validators.required],
+      packageId: ['', Validators.required]
+    });
   }
+
+  
+
+  
+
+ 
 
 }
