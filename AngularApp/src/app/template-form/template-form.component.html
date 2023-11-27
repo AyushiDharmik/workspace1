@@ -7,40 +7,27 @@
     {{salary | currency:'INR':'code'}}
     <!-- <p>{{money | custompipe:'pf'}}</p> -->
 
-<form #userData="ngForm" (ngSubmit)="submitData(userData)">
+    <form #userData="ngForm" (ngSubmit)="submitData(userData)">
 
-    <label>First Name</label>
-    <br>
-    <input type="text" #Fname="ngModel" name="Fname" required ngModel/>
-    <div  style="color: red;" *ngIf="Fname.invalid && Fname.touched ">
-        First name is required.
-    </div>
-    <br><br>
+        <label>First Name</label>
+        <br>
+        <input type="text" #Fname="ngModel" name="Fname" required ngModel />
+        <div style="color: red;" *ngIf="Fname.invalid && Fname.touched ">
+            First name is required.
+        </div>
+        <br><br>
 
-    <label>Last Name</label>
-    <br>
-    <input type="text" #Lname="ngModel" name="Lname" required ngModel/>
-    <div style="color: red;" *ngIf="Lname.invalid && Lname.touched">
-        Last name is required.
-    </div>
-    <br><br>
+        <label>Last Name</label>
+        <br>
+        <input type="text" #Lname="ngModel" name="Lname" required ngModel />
+        <div style="color: red;" *ngIf="Lname.invalid && Lname.touched">
+            Last name is required.
+        </div>
+        <br><br>
 
-    <button [disabled]="userData.invalid" class="btn btn-primary" type ="submit">Save</button>&nbsp;
-    <button class="btn btn-primary" type ="reset">Reset</button>
-</form>
+        <button [disabled]="userData.invalid" class="btn btn-primary" type="submit">Save</button>&nbsp;
+        <button class="btn btn-primary" type="reset">Reset</button>
+    </form>
 </div>
 
 
-<p>Date Pipe: {{today | date}}</p>
-
-<p>Full Date: {{today | date: 'fullDate'}}</p>
-
-<p>Mediate Date : {{today | date: 'medium'}}</p>
-
-<p>Short Date: {{today | date: 'short'}}</p>
-
-<p>Date (dd/mm/yyyy): {{today | date: 'dd/MM/yyyy'}}</p>
-
-<p>Time: {{today | date: 'h:mm a z'}}</p>
-
-<p>Medium Time: {{today | date: 'mediumTime'}}</p>
