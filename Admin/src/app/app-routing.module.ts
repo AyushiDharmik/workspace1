@@ -5,7 +5,7 @@ import { ViewCourseComponent } from './Course_crud/view-course/view-course.compo
 
 
 const routes: Routes = [
-  // {path:'',component:AddCourseComponent},
+  // {path:'add',component:AddCourseComponent},
   // {path:'view',component:ViewCourseComponent}
 ];
 
