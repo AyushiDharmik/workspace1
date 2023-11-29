@@ -22,9 +22,9 @@ export class AdminService {
     return this.httpclient.get<any>(this.url+"/"+id)
   }
 
-  createCourse(course:Course):Observable<Course>
+  createCourse(course:any):Observable<any>
   {
-    return this.httpclient.post<Course>(this.url,course,this.httpOptions)
+    return this.httpclient.post<any>(this.url,course,this.httpOptions)
   }
 
   deleteCourse(id:number):Observable<any>
