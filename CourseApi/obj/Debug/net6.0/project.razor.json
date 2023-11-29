@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "/home/coder/project/workspace/Xyz/obj/Debug/net6.0/project.razor.json",
-  "FilePath": "/home/coder/project/workspace/Xyz/Xyz.csproj",
+  "SerializedFilePath": "/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/project.razor.json",
+  "FilePath": "/home/coder/project/workspace/CourseApi/CourseApi.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18371,7 +18371,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "Xyz",
+  "RootNamespace": "CourseApi",
   "Documents": [],
   "SerializationFormat": "0.3"
 }
