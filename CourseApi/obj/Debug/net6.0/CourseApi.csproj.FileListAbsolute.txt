@@ -1,0 +1,7 @@
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.csproj.AssemblyReference.cache
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.AssemblyInfoInputs.cache
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.AssemblyInfo.cs
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/CourseApi/obj/Debug/net6.0/CourseApi.MvcApplicationPartsAssemblyInfo.cache

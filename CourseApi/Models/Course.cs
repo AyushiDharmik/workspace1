@@ -7,12 +7,12 @@ namespace CourseApi.Models
 {
     public class Course
     {
-        public int CourseId 
-        public string CourseName 
-        public string Description 
-        public string Duration 
-        public double Amount 
-        public string CreatedBy 
-        public ModifiedBy 
+        public int CourseId {get; set;}
+        public string CourseName {get; set;}
+        public string Description {get; set;}
+        public string Duration {get; set;}
+        public decimal Amount {get; set;}
+        public string CreatedBy {get; set;}
+        public string ModifiedBy {get; set;}
     }
 }

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using dotnetapp.Models;
+using CourseApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
