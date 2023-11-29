@@ -9,24 +9,36 @@
             <div>
                 <label for="courseName">Course Name:</label>
                 <input placeholder="Enter Course Name" type="text" id="courseName" name="courseName" formControlName="courseName" class="form-control" required>
+                <div style="color: red;" *ngIf="createForm.get('courseName').hasError('required') && createForm.get('courseName').touched">
+                    Course name is required.
+                </div>
             </div>
             <br>
             <div>
                 <label for="description">Description:</label>
                 <input placeholder="Enter Description" type="text" id="description" name="description" formControlName="description" class="form-control" required>
+                <div style="color: red;" *ngIf="createForm.get('description').hasError('required') && createForm.get('description').touched">
+                    Description is required.
+                </div>
             </div>
             <br>
             <div>
                 <label for="duration">Duration:</label>
                 <input placeholder="Enter Duration" type="text" id="duration" name="duration" formControlName="duration" class="form-control" required>
+                <div style="color: red;" *ngIf="createForm.get('duration').hasError('required') && createForm.get('duration').touched">
+                    Duration is required.
+                </div>
             </div>
             <br>
             <div>
                 <label for="amount">Amount:</label>
                 <input placeholder="Enter Amount" type="text" id="amount" name="amount" formControlName="amount" class="form-control" required>
-                <div *ngIf="createForm.get('amount').hasError('required') && createForm.get('amount').touched">
+                <div style="color: red;" *ngIf="createForm.get('amount').hasError('required') && createForm.get('amount').touched">
                     Amount is required.
                   </div>
+                  <div style="color: red;" *ngIf="createForm.get('duration').hasError('pattern') && createForm.get('duration').touched">
+                    Amount should be numeric.
+                </div>
             </div>
             <br>
             <div>
