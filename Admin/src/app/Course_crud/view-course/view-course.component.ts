@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/app/model/course';
 import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AdminService } from 'src/app/service/admin.service';
 })
 export class ViewCourseComponent implements OnInit {
 
-  courses:any[]=[]
+  courses:Course[]=[]
  
   constructor(private s:AdminService) { 
     this.s.getCourses().subscribe(data=>{this.courses.push(...data); console.log(data)})

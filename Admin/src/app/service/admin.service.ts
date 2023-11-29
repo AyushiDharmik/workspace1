@@ -8,7 +8,7 @@ import { Course } from '../model/course';
 })
 export class AdminService {
   
-  public url = ""
+  public url = "https://8080-cabbaacddbbbfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/CourseApi"
   constructor(private httpclient: HttpClient) { }
 
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }

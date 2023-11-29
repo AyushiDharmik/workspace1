@@ -15,6 +15,16 @@ builder.Services.AddDbContext<CourseDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyConString"));
 });
 
+builder.Services.AddCors(x => {
+    x.AddPolicy("corsPolicy", policy => {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+ 
+        //policy.WithOrigins();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,6 +37,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("corsPolicy");
 
 app.MapControllers();
 
