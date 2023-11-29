@@ -29,14 +29,15 @@ namespace CourseApi.Controllers
         [HttpPost]
         public IActionResult Create(Course course)
         {
-            db.Course.Add(course);
+            db.Courses.Add(course);
             db.SaveChanges();
             return Ok();
         }
+
         [HttpPut]
         public IActionResult Edit(int id, Course course)
         {
-            Course c = db.Course.Find(id);
+            Course c = db.Courses.Find(id);
             if (c != null)
             {
                 c.CourseId = course.CourseId;
@@ -48,7 +49,7 @@ namespace CourseApi.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            var c = db.Course.FirstOrDefault(v => v.CourseId == id);
+            var c = db.Courses.FirstOrDefault(v => v.CourseId == id);
             if (c != null)
             {
                 db.Courses.Remove(c);
