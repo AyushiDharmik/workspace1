@@ -33,7 +33,7 @@ namespace CourseApi.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public IActionResult AddCourse([FromBody] Course course)
         {
             try

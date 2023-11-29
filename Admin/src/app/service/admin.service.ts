@@ -24,7 +24,7 @@ export class AdminService {
 
   createCourse(course:any):Observable<any>
   {
-    return this.httpclient.post<any>(this.url,course,this.httpOptions)
+    return this.httpclient.post<any>(this.url+"/create",course,this.httpOptions)
   }
 
   deleteCourse(id:number):Observable<any>

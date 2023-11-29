@@ -25,13 +25,13 @@ export class AddCourseComponent implements OnInit {
   }
 
   onSubmit(){
-    // this.createForm=formData.value
-    this.adminservice.createCourse(this.createForm.value).subscribe(()=>{alert("Records added successfully")
+    
+    this.adminservice.createCourse(this.createForm.value);
     console.log(this.createForm.value);
     // this.route.navigate(["/view"])
-  });
+  };
    
   }
 
 
-}
+
