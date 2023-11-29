@@ -1,5 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Course } from '../model/course';
 
 @Injectable({
   providedIn: 'root'
@@ -12,27 +14,27 @@ export class AdminService {
 
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
 
-  getPlayers(): Observable<any> 
+  getCourses(): Observable<any> 
   {
     return this.httpclient.get<any>(this.url)
   }
-  getPlayer(id:number):Observable<Player>
+  getCourse(id:number):Observable<any>
   {
-    return this.httpclient.get<Player>(this.url+"/"+id)
+    return this.httpclient.get<any>(this.url+"/"+id)
   }
 
-  createPlayer(player:Player):Observable<Player>
+  createCourse(course:Course):Observable<any>
   {
-    return this.httpclient.post<Player>(this.url , this.httpOptions)
+    return this.httpclient.post<any>(this.url , this.httpOptions)
   }
 
-  deletePlayer(id:number):Observable<Player>
+  deleteCourse(id:number):Observable<any>
   {
-    return this.httpclient.delete<Player>(this.url+"/"+id)
+    return this.httpclient.delete<any>(this.url+"/"+id)
   }
 
-  updatePlayer(id:number,player:Player):Observable<Player>
+  updateCourse(id:number,course:any):Observable<any>
   {
-    return this.httpclient.put<Player>(this.url+"/"+player.id,player,this.httpOptions)
+    return this.httpclient.put<any>(this.url+"/"+course.id,course,this.httpOptions)
   }    
 }

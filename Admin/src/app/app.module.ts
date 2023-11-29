@@ -3,18 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddCourseComponent } from './add-course/add-course.component';
+import { AddCourseComponent } from './Course_crud/add-course/add-course.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminService } from './service/admin.service';
+import { EditCourseComponent } from './Course_crud/edit-course/edit-course.component';
+import { ViewCourseComponent } from './Course_crud/view-course/view-course.component';
+import { DeleteCourseComponent } from './Course_crud/delete-course/delete-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    EditCourseComponent,
+    ViewCourseComponent,
+    DeleteCourseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
