@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AddCourseComponent implements OnInit {
   courses:any[]=[]
 
   createForm:any
-  constructor(private fb:FormBuilder,private adminservice:AdminService) { }
+  constructor(private fb:FormBuilder,private adminservice:AdminService,private route:Router) { }
  
   ngOnInit(): void {
     this.createForm=this.fb.group({
@@ -25,7 +26,8 @@ export class AddCourseComponent implements OnInit {
 
   onSubmit(formData:FormGroup){
     this.createForm=formData.value
-    this.adminservice.createCourse(this.createForm.value).subscribe(()=>{alert("Records added successfully")});
+    this.adminservice.createCourse(this.createForm.value).subscribe(()=>{alert("Records added successfully")
+    this.route.navigate(["/view"])});
    
   }
 
