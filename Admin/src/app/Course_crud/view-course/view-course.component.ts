@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
   selector: 'app-view-course',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewCourseComponent implements OnInit {
 
-  constructor() { }
+  courses:any[]=[]
+ 
+  constructor(private s:AdminService) { 
+    this.s.getCourses().subscribe(data=>{this.courses.push(...data); console.log(data)})
+  }
 
   ngOnInit() {
   }

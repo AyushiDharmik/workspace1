@@ -16,7 +16,7 @@
             <br>
             <div>
                 <label for="description">Description:</label>
-                <input placeholder="Enter Description" type="text" id="description" name="description" formControlName="description" class="form-control" required>
+                <textarea placeholder="Enter Description" id="description" name="description" formControlName="description" class="form-control" required></textarea>
                 <div style="color: red;" *ngIf="createForm.get('description').hasError('required') && createForm.get('description').touched">
                     Description is required.
                 </div>
@@ -36,7 +36,7 @@
                 <div style="color: red;" *ngIf="createForm.get('amount').hasError('required') && createForm.get('amount').touched">
                     Amount is required.
                   </div>
-                  <div style="color: red;" *ngIf="createForm.get('duration').hasError('pattern') && createForm.get('duration').touched">
+                  <div style="color: red;" *ngIf="createForm.get('amount').hasError('pattern') && createForm.get('amount').touched">
                     Amount should be numeric.
                 </div>
             </div>
