@@ -9,6 +9,7 @@ import { AdminService } from './service/admin.service';
 import { EditCourseComponent } from './Course_crud/edit-course/edit-course.component';
 import { ViewCourseComponent } from './Course_crud/view-course/view-course.component';
 import { DeleteCourseComponent } from './Course_crud/delete-course/delete-course.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DeleteCourseComponent } from './Course_crud/delete-course/delete-course
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [HttpClientModule,AdminService],

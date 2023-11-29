@@ -1,27 +1,33 @@
 <form [formGroup]="createForm" (ngSubmit)='onSubmit(createForm)'>
-    <h3>Create Player</h3>
-    <div>
+    
+   
+    <div style="padding: 50px;">
+        <h2 style="font-family: 'Times New Roman', Times, serif;"><b>Add Course Details</b></h2>
+        <br>
         <div class="form-group">
          
             <div>
                 <label for="courseName">Course Name:</label>
-                <input type="text" id="courseName" name="courseName" formControlName="courseName" class="form-control">
+                <input placeholder="Enter Course Name" type="text" id="courseName" name="courseName" formControlName="courseName" class="form-control">
             </div>
+            <br>
             <div>
                 <label for="description">Description:</label>
-                <input  type="text" id="description" name="description" formControlName="description" class="form-control">
+                <input placeholder="Enter Description" type="text" id="description" name="description" formControlName="description" class="form-control">
             </div>
-            
+            <br>
             <div>
                 <label for="duration">Duration:</label>
-                <input type="text" id="duration" name="duration" formControlName="duration" class="form-control">
+                <input placeholder="Enter Duration" type="text" id="duration" name="duration" formControlName="duration" class="form-control">
             </div>
+            <br>
             <div>
                 <label for="amount">Amount:</label>
-                <input  type="text" id="amount" name="amount" formControlName="amount" class="form-control">
+                <input placeholder="Enter Amount" type="text" id="amount" name="amount" formControlName="amount" class="form-control">
             </div>
+            <br>
             <div>
-                <button type="submit" [disabled]="createForm.invalid">Add Course</button>
+                <button type="submit" class="btn btn-success" [disabled]="createForm.invalid">Add Course</button>
             </div>
         </div>
     </div>
