@@ -31,7 +31,7 @@ namespace CourseApi.Controllers
         {
             db.Courses.Add(course);
             db.SaveChanges();
-            return Ok();
+            return Created("Get",course);
         }
 
         [HttpPut]
@@ -42,7 +42,7 @@ namespace CourseApi.Controllers
             {
                 c.CourseId = course.CourseId;
                 db.SaveChanges();
-                return Ok();
+                return Created("Get",course);
             }
             return NotFound();
         }
