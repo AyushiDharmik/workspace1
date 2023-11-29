@@ -19,7 +19,7 @@ export class AddCourseComponent implements OnInit {
       courseName:['',Validators.required],
       description:['',Validators.required],
       duration:['',Validators.required],
-      amount:['',Validators.required]
+      amount:['',[Validators.required,Validators.pattern(/^-?\.?\d*$/)]]
     })
   }
 
