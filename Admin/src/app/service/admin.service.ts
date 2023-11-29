@@ -7,7 +7,6 @@ import { Course } from '../model/course';
   providedIn: 'root'
 })
 export class AdminService {
-
   
   public url = ""
   constructor(private httpclient: HttpClient) { }
