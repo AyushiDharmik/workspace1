@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseApi.Models;
 using Microsoft.EntityFrameworkCore;
-using CourseApi.Models;
 
 namespace CourseApi.Controllers
 {
@@ -20,14 +19,14 @@ namespace CourseApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetCourses()
         {
             var course = db.Courses;
             return Ok(course);
         }
 
         [HttpPost]
-        public IActionResult Create(Course course)
+        public IActionResult AddCourse(Course course)
         {
             db.Courses.Add(course);
             db.SaveChanges();
@@ -35,7 +34,7 @@ namespace CourseApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult Edit(int id, Course course)
+        public IActionResult EditCourse(int id, Course course)
         {
             Course c = db.Courses.Find(id);
             if (c != null)
@@ -47,7 +46,7 @@ namespace CourseApi.Controllers
             return NotFound();
         }
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteCourse(int id)
         {
             var c = db.Courses.FirstOrDefault(v => v.CourseId == id);
             if (c != null)
