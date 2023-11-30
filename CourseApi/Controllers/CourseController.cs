@@ -245,7 +245,29 @@ namespace CourseApi.Controllers
                 _db.Admissions.Add(admission);
                 _db.SaveChanges();
 
-                return CreatedAtAction("GetCourses", new { id = admission.AdmissionId }, admission);
+                return CreatedAtAction("GetAdmissions", new { id = admission.AdmissionId }, admission);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+         //Post Enquiry
+        [HttpPost("course/enquiry")]
+        public IActionResult AddEnquiry([FromBody] Enquiry enquiry)
+        {
+            try
+            {
+                if (enquiry == null)
+                {
+                    return BadRequest("Admission object is null");
+                }
+
+                _db.Enquiries.Add(enquiry);
+                _db.SaveChanges();
+
+                return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
             }
             catch (Exception ex)
             {
