@@ -1,58 +1,56 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Threading.Tasks;
+// using Microsoft.AspNetCore.Builder;
+// using Microsoft.AspNetCore.Hosting;
+// using Microsoft.Extensions.Configuration;
+// using Microsoft.Extensions.DependencyInjection;
+// using Microsoft.Extensions.Hosting;
 
-namespace CourseApi
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddDistributedMemoryCache();
-            services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromMinutes(100);
-            });
-            services.AddMvc();
-        }
-    }
+// namespace CourseApi
+// {
+//     public class Startup
+//     {
+//         public Startup(IConfiguration configuration)
+//         {
+//             Configuration = configuration;
+//         }
 
-    public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
-    {
+//         public IConfiguration Configuration { get; }
 
-        if (env.IsDevelopment())
+//         public void ConfigureServices(IServiceCollection services)
+//         {
+//             services.AddControllers();
 
-        {
+//             services.AddDistributedMemoryCache(); // In-memory cache for demo purposes
+//             services.AddSession(options =>
+//             {
+//                 options.IdleTimeout = TimeSpan.FromMinutes(20); // Adjust timeout as needed
+//                 options.Cookie.HttpOnly = true;
+//                 options.Cookie.IsEssential = true;
+//             });
+//         }
 
-            app.UseDeveloperExceptionPage();
+//         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+//         {
+//             if (env.IsDevelopment())
+//             {
+//                 app.UseDeveloperExceptionPage();
+//             }
 
-            app.UseBrowserLink();
+//             app.UseRouting();
 
-        }
+//             app.UseSession();
 
-        else
+//             app.UseEndpoints(endpoints =>
+//             {
+//                 endpoints.MapControllers();
+//             });
+//         }
+//     }
 
-        {
+// }
 
-        }
 
-        app.UseExceptionHandler("/Home/Error");
 
-        app.UseStaticFiles();
-
-        app.UseSession();
-
-        app.UseMvc(routes =>
-
-        {
-
-            routes.MapRoute(
-
-    name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-
-        });
-
-    }
-
-}
