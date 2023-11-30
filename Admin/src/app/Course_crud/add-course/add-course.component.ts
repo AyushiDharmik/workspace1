@@ -11,11 +11,14 @@ import { AdminService } from 'src/app/service/admin.service';
 export class AddCourseComponent implements OnInit {
 
   courses:any[]=[]
-
-  createForm:any;
+  createForm:FormGroup;
   constructor(private fb:FormBuilder,private adminservice:AdminService,private route:Router) { }
  
   ngOnInit(): void {
+    this.createAddform();
+  }
+
+  createAddform(){
     this.createForm=this.fb.group({
       courseName:['',Validators.required],
       description:['',Validators.required],
@@ -23,12 +26,14 @@ export class AddCourseComponent implements OnInit {
       amount:['',[Validators.required,Validators.pattern(/^[0-9]+(\.?[0-9]+)?$/)]]
     })
   }
+ 
 
   onSubmit(){
-    console.log(this.createForm.value);
+  
     this.adminservice.createCourse(this.createForm.value).subscribe(()=>{alert("Records added successfully")
     //this.route.navigate(["/view"])
     })
+    console.log(this.createForm.value);
   };
    
   }

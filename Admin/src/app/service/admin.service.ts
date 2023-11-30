@@ -8,7 +8,7 @@ import { Course } from '../model/course';
 })
 export class AdminService {
   
-  public url = "https://8080-cabbaacddbbbfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/CourseApi"
+  private url = "https://8080-cabbaacddbbbfabcaaaceeafebecebbffdafdefabcc.premiumproject.examly.io/api/CourseApi"
   constructor(private httpclient: HttpClient) { }
 
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
@@ -22,7 +22,7 @@ export class AdminService {
     return this.httpclient.get<any>(this.url+"/"+id)
   }
 
-  createCourse(course:Course):Observable<any>
+  createCourse(course:any):Observable<any>
   {
     return this.httpclient.post<any>(this.url+"/create",course,this.httpOptions)
   }
