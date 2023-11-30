@@ -261,7 +261,7 @@ namespace CourseApi.Controllers
             {
                 if (enquiry == null)
                 {
-                    return BadRequest("Admission object is null");
+                    return BadRequest("Enquiry object is null");
                 }
 
                 _db.Enquiries.Add(enquiry);
