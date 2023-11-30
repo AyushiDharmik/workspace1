@@ -104,9 +104,7 @@ namespace CourseApi.Controllers
             }
         }
 
-
-
-
+        //Get Course
         [HttpGet("course")]
         public IActionResult GetCourses()
         {
@@ -121,6 +119,7 @@ namespace CourseApi.Controllers
             }
         }
 
+        //Post Course
         [HttpPost("course")]
         public IActionResult AddCourse([FromBody] Course course)
         {
@@ -143,7 +142,7 @@ namespace CourseApi.Controllers
         }
 
        
-
+        //Get Courses for a Student
           [HttpGet("student/course")]
         public IActionResult GetStudentCourse()
         {
@@ -157,6 +156,8 @@ namespace CourseApi.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
+        //Get Payments
 
           [HttpGet("payments/{id}")]
         public IActionResult GetPayment()
@@ -172,6 +173,8 @@ namespace CourseApi.Controllers
             }
         }
 
+        //Get enquiry
+
         [HttpGet("enquiry")]
         public IActionResult GetEnquiry()
         {
@@ -185,6 +188,8 @@ namespace CourseApi.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
+        //Get Admissions
 
         [HttpGet("admissions")]
         public IActionResult GetAdmissions()
@@ -200,7 +205,7 @@ namespace CourseApi.Controllers
             }
         }
 
-       
+       //Delete Admission
 
         [HttpDelete("admission/{admissionId}")]
         public IActionResult DeleteAdmission(int id)
