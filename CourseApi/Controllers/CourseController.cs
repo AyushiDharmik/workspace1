@@ -9,7 +9,7 @@ using CourseApi.Models;
 namespace CourseApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class CourseController : ControllerBase
     {
         private readonly ApplicationDbContext _db;
@@ -19,34 +19,31 @@ namespace CourseApi.Controllers
             _db = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        [HttpGet("course")]
-        public IActionResult GetCourses()
-        {
-            try
-            {
-                var courses = _db.Courses.ToList();
-                return Ok(courses);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
 
-         [HttpPost("create")]
-        public IActionResult AddCourse([FromBody] Course course)
+         //Update Admission   
+
+         [HttpPut("updateadmission/{admissionId}")]
+        public IActionResult EditAdmission(int id, [FromBody] Admission admission)
         {
             try
             {
-                if (course == null)
+                var existingAdmission = _db.Admissions.Find(id);
+
+                if (admission.IsDeleted == false)
                 {
-                    return BadRequest("Course object is null");
+                    if (existingAdmission == null)
+                    {
+                        return NotFound($"Admission with ID {id} not found");
+                    }
+
+                    // Update properties based on your Course model
+                    existingAdmission.Status = admission.Status;
+
+                    _db.SaveChanges();
+
+                    return NoContent();
                 }
-
-                _db.Courses.Add(course);
-                _db.SaveChanges();
-
-                return CreatedAtAction("GetCourses", new { id = course.CourseID }, course);
+                    return NotFound($"Admission with ID {id} not found");
             }
             catch (Exception ex)
             {
@@ -54,108 +51,8 @@ namespace CourseApi.Controllers
             }
         }
 
-          [HttpDelete("{id}")]
-        public IActionResult DeleteCourse(int id)
-        {
-            try
-            {
-                var course = _db.Courses.Find(id);
-
-                if (course == null)
-                {
-                    return NotFound($"Course with ID {id} not found");
-                }
-                course.IsDeleted=false;
-                _db.SaveChanges();
-
-                return Ok("Course Deleted");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
-
-
-        //   [HttpGet("student/course")]
-        // public IActionResult GetStudentCourse()
-        // {
-        //     try
-        //     {
-        //         var courses = _db.Courses.ToList();
-        //         return Ok(courses);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return StatusCode(500, $"Internal Server Error: {ex.Message}");
-        //     }
-        // }
-
-        //   [HttpGet("payments/{id}")]
-        // public IActionResult GetPayment()
-        // {
-        //     try
-        //     {
-        //         var payments = _db.Payments.ToList();
-        //         return Ok(payments);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return StatusCode(500, $"Internal Server Error: {ex.Message}");
-        //     }
-        // }
-
-          [HttpGet("enquiry")]
-        public IActionResult GetEnquiry()
-        {
-            try
-            {
-                var enquiry = _db.Enquiries.ToList();
-                return Ok(enquiry);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
-
-          [HttpGet("admissions")]
-        public IActionResult GetAdmissions()
-        {
-            try
-            {
-                var admissions = _db.Admissions.ToList();
-                return Ok(admissions);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
-        
-           [HttpDelete("admission/{admissionId}")]
-        public IActionResult DeleteAdmission(int id)
-        {
-            try
-            {
-                var admission = _db.Admissions.Find(id);
-
-                if (admission == null)
-                {
-                    return NotFound($"Course with ID {id} not found");
-                }
-                admission.IsDeleted=false;
-                _db.SaveChanges();
-
-                return Ok("Course Deleted");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
-
-        [HttpPut("{id}")]
+        //update course
+          [HttpPut("course/{id}")]
         public IActionResult EditCourse(int id, [FromBody] Course course)
         {
             try
@@ -184,6 +81,150 @@ namespace CourseApi.Controllers
             }
         }
 
+        //Delete Course
+         [HttpDelete("course/{id}")]
+        public IActionResult DeleteCourse(int id)
+        {
+            try
+            {
+                var course = _db.Courses.Find(id);
+
+                if (course == null)
+                {
+                    return NotFound($"Course with ID {id} not found");
+                }
+                course.IsDeleted = false;
+                _db.SaveChanges();
+
+                return Ok("Course Deleted");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
+
+
+        [HttpGet("course")]
+        public IActionResult GetCourses()
+        {
+            try
+            {
+                var courses = _db.Courses.ToList();
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpPost("course")]
+        public IActionResult AddCourse([FromBody] Course course)
+        {
+            try
+            {
+                if (course == null)
+                {
+                    return BadRequest("Course object is null");
+                }
+
+                _db.Courses.Add(course);
+                _db.SaveChanges();
+
+                return CreatedAtAction("GetCourses", new { id = course.CourseID }, course);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+       
+
+          [HttpGet("student/course")]
+        public IActionResult GetStudentCourse()
+        {
+            try
+            {
+                var courses = _db.Courses.ToList();
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+          [HttpGet("payments/{id}")]
+        public IActionResult GetPayment()
+        {
+            try
+            {
+                var payments = _db.Payments.ToList();
+                return Ok(payments);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("enquiry")]
+        public IActionResult GetEnquiry()
+        {
+            try
+            {
+                var enquiry = _db.Enquiries.ToList();
+                return Ok(enquiry);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("admissions")]
+        public IActionResult GetAdmissions()
+        {
+            try
+            {
+                var admissions = _db.Admissions.ToList();
+                return Ok(admissions);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+       
+
+        [HttpDelete("admission/{admissionId}")]
+        public IActionResult DeleteAdmission(int id)
+        {
+            try
+            {
+                var admission = _db.Admissions.Find(id);
+
+                if (admission == null)
+                {
+                    return NotFound($"Course with ID {id} not found");
+                }
+                admission.IsDeleted = false;
+                _db.SaveChanges();
+
+                return Ok("Course Deleted");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
       
+
     }
 }
