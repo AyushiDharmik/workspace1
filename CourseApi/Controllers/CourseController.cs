@@ -205,6 +205,8 @@ namespace CourseApi.Controllers
             }
         }
 
+
+
        //Delete Admission
 
         [HttpDelete("admission/{admissionId}")]
@@ -222,6 +224,28 @@ namespace CourseApi.Controllers
                 _db.SaveChanges();
 
                 return Ok("Course Deleted");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        //Post Admission
+        [HttpPost("course/admission")]
+        public IActionResult AddAdmission([FromBody] Admission admission)
+        {
+            try
+            {
+                if (admission == null)
+                {
+                    return BadRequest("Admission object is null");
+                }
+
+                _db.Admissions.Add(admission);
+                _db.SaveChanges();
+
+                return CreatedAtAction("GetCourses", new { id = admission.AdmissionId }, admission);
             }
             catch (Exception ex)
             {
