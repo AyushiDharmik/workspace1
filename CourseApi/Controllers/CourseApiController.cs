@@ -19,7 +19,7 @@ namespace CourseApi.Controllers
             _db = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        [HttpGet]
+        [HttpGet("course")]
         public IActionResult GetCourses()
         {
             try
@@ -32,6 +32,63 @@ namespace CourseApi.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
+          [HttpGet("student/course")]
+        public IActionResult GetStudentCourse()
+        {
+            try
+            {
+                var courses = _db.Courses.ToList();
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+          [HttpGet("payments/{id}")]
+        public IActionResult GetPayment()
+        {
+            try
+            {
+                var payments = _db.Courses.ToList();
+                return Ok(payments);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+          [HttpGet("enquiry")]
+        public IActionResult GetEnquiry()
+        {
+            try
+            {
+                var courses = _db.Courses.ToList();
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+          [HttpGet("admissions")]
+        public IActionResult GetAdmissions()
+        {
+            try
+            {
+                var courses = _db.Courses.ToList();
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+        
 
         [HttpPost("create")]
         public IActionResult AddCourse([FromBody] Course course)
