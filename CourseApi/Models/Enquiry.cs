@@ -11,11 +11,11 @@ namespace CourseApi.Models
 
         public DateTime EnquiryDate { get; set; }
 
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public string EnquiryType { get; set; }
+        public string? EnquiryType { get; set; }
 
         public int StudentId { get; set; }
 
