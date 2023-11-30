@@ -7,11 +7,14 @@ using CourseApi.Models;
 
 namespace CourseApi.Models
 {
-    public class CourseDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public CourseDbContext(DbContextOptions <CourseDbContext> options):base(options)
+        public ApplicationDbContext(DbContextOptions <ApplicationDbContext> options):base(options)
         {
         }
         public virtual DbSet<Course> Courses {get;set;}
+        public virtual DbSet<Enquiry> Enquiries {get;set;}
+        public virtual DbSet<User> Users {get;set;}
+       
     }
 }
