@@ -52,5 +52,18 @@
 
 // }
 
+namespace CourseApi
+{
+    public class Startup{
+        public const string SessionKeyUsername="SessionKeyUsername";
+        public const string SessionKeyId="SessionKeyId";
+    }
+
+    public enum SessionKeyEnum
+    {
+        SessionKeyUsername=0,
+        SessionKeyId=1
+    }
+}
 
 

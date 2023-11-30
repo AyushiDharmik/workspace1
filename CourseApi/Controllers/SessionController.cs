@@ -11,19 +11,26 @@ namespace CourseApi.Controllers
     [Route("[controller]")]
     public class SessionController : Controller
     {
-    
-        
+
+
         [HttpGet]
-        public IActionResult GetSessionValue()
+        public IEnumerable<string> GetSessionValue()
         {
-            // Example: Set session value
-            HttpContext.Session.SetString("UserName", "JohnDoe");
+            List<string> sessionInfo = new List<string>();
+            if (string.IsNullOrWhiteSpace(HttpContext.Session.GetString(Startup.SessionKeyUsername)))
+            {
+                HttpContext.Session.SetString(Startup.SessionKeyUsername, "Current User");
+                HttpContext.Session.SetString(Startup.SessionKeyId, Guid.NewGuid().ToString());
+            }
 
-            // Example: Get session value
-            var userName = HttpContext.Session.GetString("UserName");
+            var username = HttpContext.Session.GetString(Startup.SessionKeyUsername);
+            var sessionId = HttpContext.Session.GetString(Startup.SessionKeyId);
 
-            return Ok(userName);
+            sessionInfo.Add(username);
+            sessionInfo.Add(sessionId);
+
+            return sessionInfo;
         }
-     
+
     }
 }
