@@ -10,6 +10,7 @@ import { EditCourseComponent } from './Course_crud/edit-course/edit-course.compo
 import { ViewCourseComponent } from './Course_crud/view-course/view-course.component';
 import { DeleteCourseComponent } from './Course_crud/delete-course/delete-course.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddCourseComponent,
     EditCourseComponent,
     ViewCourseComponent,
-    DeleteCourseComponent
+    DeleteCourseComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
