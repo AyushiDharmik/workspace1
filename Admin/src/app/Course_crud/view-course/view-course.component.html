@@ -1,9 +1,9 @@
 
 <div style="padding: 100px;">
 <table class="table table-bordered">
-    <thead>
+    <thead class="dark">
       <tr>
-        <th scope="col">Course Id</th>
+        <th scope="col">Course ID</th>
         <th scope="col">Course Name</th>
         <th scope="col">Description</th>
         <th scope="col">Duration</th>
@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let course of courses">
-            <td>{{course.courseId}}</td>
+            <td>{{course.courseID}}</td>
             <td>{{course.courseName}}</td>
             <td>{{course.description}}</td>
             <td>{{course.duration}}</td>

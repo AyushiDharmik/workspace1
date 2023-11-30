@@ -1,7 +1,7 @@
 import { Enquiry } from "./enquiry"
 
 export interface Course {
-    courseId: number,
+    courseID: number,
     courseName: string,
     description: string,
     duration: string,
