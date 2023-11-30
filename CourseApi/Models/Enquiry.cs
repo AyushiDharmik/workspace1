@@ -17,9 +17,9 @@ namespace CourseApi.Models
 
         public string? EnquiryType { get; set; }
 
-        public int StudentId { get; set; }
+        public int? StudentId { get; set; }
 
-         public Boolean IsDeleted { get; set; }
+         public Boolean? IsDeleted { get; set; }
 
     }
 }
