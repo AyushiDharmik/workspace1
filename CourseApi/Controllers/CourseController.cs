@@ -46,7 +46,7 @@ namespace CourseApi.Controllers
                 _db.Courses.Add(course);
                 _db.SaveChanges();
 
-                return CreatedAtAction("GetCourses", new { id = course.CourseId }, course);
+                return CreatedAtAction("GetCourses", new { id = course.CourseID }, course);
             }
             catch (Exception ex)
             {
@@ -65,10 +65,10 @@ namespace CourseApi.Controllers
                 {
                     return NotFound($"Course with ID {id} not found");
                 }
-                _db.Courses.Remove(course);
+                course.IsDeleted=true;
                 _db.SaveChanges();
 
-                return NoContent();
+                return Ok("Course Deleted");
             }
             catch (Exception ex)
             {
@@ -133,9 +133,6 @@ namespace CourseApi.Controllers
         //     }
         // }
         
-
-       
-
         // [HttpPut("{id}")]
         // public IActionResult EditCourse(int id, [FromBody] Course course)
         // {

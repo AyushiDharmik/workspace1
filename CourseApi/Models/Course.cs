@@ -16,6 +16,11 @@ namespace CourseApi.Models
    public string Duration { get; set; }
 
    public int FeesAmount { get; set; }
+
+    public Boolean IsDeleted {get;set;}
    public ICollection<Enquiry> Enquiries { get; set; }
+    
+
+    
     }
 }
