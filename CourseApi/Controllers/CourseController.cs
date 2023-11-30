@@ -133,34 +133,56 @@ namespace CourseApi.Controllers
             }
         }
         
-        // [HttpPut("{id}")]
-        // public IActionResult EditCourse(int id, [FromBody] Course course)
-        // {
-        //     try
-        //     {
-        //         var existingCourse = _db.Courses.Find(id);
+           [HttpDelete("admission/{admissionId}")]
+        public IActionResult DeleteAdmission(int id)
+        {
+            try
+            {
+                var admission = _db.Admissions.Find(id);
 
-        //         if (existingCourse == null)
-        //         {
-        //             return NotFound($"Course with ID {id} not found");
-        //         }
+                if (admission == null)
+                {
+                    return NotFound($"Course with ID {id} not found");
+                }
+                admission.IsDeleted=false;
+                _db.SaveChanges();
 
-        //         // Update properties based on your Course model
-        //         existingCourse.CourseName = course.CourseName;
-        //         existingCourse.Description = course.Description;
-        //         existingCourse.Duration = course.Duration;
-        //         existingCourse.Amount = course.Amount;
-        //         existingCourse.ModifiedBy = course.ModifiedBy;
+                return Ok("Course Deleted");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
 
-        //         _db.SaveChanges();
+        [HttpPut("{id}")]
+        public IActionResult EditCourse(int id, [FromBody] Course course)
+        {
+            try
+            {
+                var existingCourse = _db.Courses.Find(id);
 
-        //         return NoContent();
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return StatusCode(500, $"Internal Server Error: {ex.Message}");
-        //     }
-        // }
+                if (existingCourse == null)
+                {
+                    return NotFound($"Course with ID {id} not found");
+                }
+
+                // Update properties based on your Course model
+                existingCourse.CourseName = course.CourseName;
+                existingCourse.Description = course.Description;
+                existingCourse.Duration = course.Duration;
+                existingCourse.FeesAmount = course.FeesAmount;
+                existingCourse.ModifiedBy = course.ModifiedBy;
+
+                _db.SaveChanges();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
 
       
     }

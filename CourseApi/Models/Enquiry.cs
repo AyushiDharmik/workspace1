@@ -19,5 +19,7 @@ namespace CourseApi.Models
 
         public int StudentId { get; set; }
 
+         public Boolean IsDeleted { get; set; }
+
     }
 }

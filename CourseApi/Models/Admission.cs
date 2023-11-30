@@ -14,5 +14,7 @@ namespace CourseApi.Models
 
          public virtual User? User {get; set;}
 
+          public Boolean IsDeleted { get; set; }
+
     }
 }

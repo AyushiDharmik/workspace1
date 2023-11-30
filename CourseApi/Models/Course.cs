@@ -16,6 +16,8 @@ namespace CourseApi.Models
         public string? Duration { get; set; }
 
         public int FeesAmount { get; set; }
+        public string? CreatedBy {get; set;}
+        public string? ModifiedBy {get; set;}
 
         public Boolean IsDeleted { get; set; }
         public ICollection<Enquiry>? Enquiries { get; set; }
