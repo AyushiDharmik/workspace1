@@ -40,6 +40,23 @@
                 </div>
             </div>
             <br>
+<!-- 
+            <div>
+                <label for="createdBy">CreatedBy:</label>
+                <textarea placeholder="Enter CreatedBy" id="createdBy" name="createdBy" formControlName="createdBy" class="form-control" required></textarea>
+                <div style="color: red;" *ngIf="createForm.get('createdBy').hasError('required') && createForm.get('createdBy').touched">
+                    Description is required.
+                </div>
+            </div>
+
+            <div>
+                <label for="modifiedBy">modifiedBy:</label>
+                <textarea placeholder="Enter Description" id="modifiedBy" name="modifiedBy" formControlName="modifiedBy" class="form-control" required></textarea>
+                <div style="color: red;" *ngIf="createForm.get('modifiedBy').hasError('required') && createForm.get('modifiedBy').touched">
+                    Description is required.
+                </div>
+            </div> -->
+
             <div>
                 <button type="submit" class="btn btn-success" [disabled]="createForm.invalid">Add Course</button>
             </div>

@@ -5,8 +5,8 @@ import { ViewCourseComponent } from './Course_crud/view-course/view-course.compo
 
 
 const routes: Routes = [
-  // {path:'add',component:AddCourseComponent},
-  // {path:'view',component:ViewCourseComponent}
+  {path:'add',component:AddCourseComponent},
+  {path:'view',component:ViewCourseComponent}
 ];
 
 @NgModule({

@@ -23,6 +23,8 @@ export class AddCourseComponent implements OnInit {
       courseName:['',Validators.required],
       description:['',Validators.required],
       duration:['',Validators.required],
+      // createdBy:['',Validators.required],
+      // modifiedBy:['',Validators.required],
       amount:['',[Validators.required,Validators.pattern(/^[0-9]+(\.?[0-9]+)?$/)]]
     })
   }
@@ -31,7 +33,7 @@ export class AddCourseComponent implements OnInit {
   onSubmit(){
   
     this.adminservice.createCourse(this.createForm.value).subscribe(()=>{alert("Records added successfully")
-    //this.route.navigate(["/view"])
+    this.route.navigate(["/view"])
     })
     console.log(this.createForm.value);
   };
