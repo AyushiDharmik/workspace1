@@ -248,26 +248,29 @@ namespace CourseApi.Controllers
         //     }
         // }
 
-         //Post Enquiry
-        // [HttpPost("course/enquiry")]
-        // public async Task<IActionResult> AddEnquiry([FromBody] Enquiry enquiry)
-        // {
-        //     try
-        //     {
-        //         if (enquiry == null)
-        //         {
-        //             return BadRequest("Enquiry object is null");
-        //         }
+        // Post Enquiry
+        [HttpPost("course/enquiry")]
+        public async Task<IActionResult> AddEnquiry([FromBody] Enquiry enquiry)
+        {
+            try
+            {
+                if (enquiry == null)
+                {
+                    return BadRequest("Enquiry object is null");
+                }
+                var currentDate = DateTime.UtcNow.Date;
+                var todayEnquiriesCount = await _db.Enquiries.CountAsync(enquiry=>)
 
-        //         _db.Enquiries.Add(enquiry);
-        //         await _db.SaveChangesAsync();
-        //         return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return StatusCode(500, $"Internal Server Error: {ex.Message}");
-        //     }
-        // }
+
+                _db.Enquiries.Add(enquiry);
+                await _db.SaveChangesAsync();
+                return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
 
       
 
