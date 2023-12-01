@@ -15,7 +15,7 @@ export class AdminService {
 
   getCourses(): Observable<any> 
   {
-    return this.httpclient.get<any>(this.url+"/course")
+    return this.httpclient.get<any>(this.url+"/courses")
   }
   getCourse(id:number):Observable<any>
   {
