@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddCourseComponent } from './AdminDashboard/add-course/add-course.component';
+import { AddCourseComponent } from './AdminDashboard/Course_crud/add-course/add-course.component';
 import { ViewCourseComponent } from './AdminDashboard/Course_crud/view-course/view-course.component';
 import { AdmissionComponent } from './AdminDashboard/View/admission/admission.component';
 import { EnquiryComponent } from './AdminDashboard/View/enquiry/enquiry.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'enquiry',component:EnquiryComponent},
   {path:'payment',component:PaymentComponent},
   {path:'view-admission',component:ViewAdmissionComponent},
-  {path:'payment-history',component:PaymentHistoryComponent}
+  {path:'payment-history',component:PaymentHistoryComponent},
 
 ];
 

@@ -25,7 +25,7 @@ export class AddCourseComponent implements OnInit {
       duration:['',Validators.required],
       // createdBy:['',Validators.required],
       // modifiedBy:['',Validators.required],
-      amount:['',[Validators.required,Validators.pattern(/^[0-9]+(\.?[0-9]+)?$/)]]
+      feesAmount:['',[Validators.required,Validators.pattern(/^[0-9]+(\.?[0-9]+)?$/)]]
     })
   }
  

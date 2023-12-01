@@ -24,12 +24,17 @@ export class AdminService {
 
   createCourse(course:any):Observable<any>
   {
-    return this.httpclient.post<any>(this.url+"/create",course,this.httpOptions)
+    return this.httpclient.post<any>(this.url+"/course",course,this.httpOptions)
+  }
+
+  FindId(id:number):Observable<any>
+  {
+    return this.httpclient.get<any>(this.url+"/course/"+id)
   }
 
   deleteCourse(id:number):Observable<any>
   {
-    return this.httpclient.delete<any>(this.url+"/"+id)
+    return this.httpclient.delete<any>(this.url+"/course/"+id)
   }
 
   updateCourse(id:number,course:any):Observable<any>

@@ -19,7 +19,7 @@ namespace CourseApi.Models
         public string? CreatedBy {get; set;}
         public string? ModifiedBy {get; set;}
 
-        public Boolean IsDeleted { get; set; }
+        public Boolean? IsDeleted { get; set; }
         public ICollection<Enquiry>? Enquiries { get; set; }
 
 
