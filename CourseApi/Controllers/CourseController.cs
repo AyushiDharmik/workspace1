@@ -255,7 +255,7 @@ namespace CourseApi.Controllers
 
          //Post Enquiry
         [HttpPost("course/enquiry")]
-        public IActionResult AddEnquiry([FromBody] Enquiry enquiry)
+        public async Task<IActionResult> AddEnquiry([FromBody] Enquiry enquiry)
         {
             try
             {
@@ -265,8 +265,7 @@ namespace CourseApi.Controllers
                 }
 
                 _db.Enquiries.Add(enquiry);
-                _db.SaveChanges();
-
+                await _db.SaveChangesAsync();
                 return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
             }
             catch (Exception ex)
