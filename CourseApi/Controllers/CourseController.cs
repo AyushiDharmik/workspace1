@@ -258,10 +258,7 @@ namespace CourseApi.Controllers
                 {
                     return BadRequest("Enquiry object is null");
                 }
-                var currentDate = DateTime.UtcNow.Date;
-                var todayEnquiriesCount = await _db.Enquiries.CountAsync(enquiry=>)
-
-
+            
                 _db.Enquiries.Add(enquiry);
                 await _db.SaveChangesAsync();
                 return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
