@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavMenuComponent implements OnInit {
 
+  title='new';
+  myimage:string="assets/images/bg.jpg";
   constructor() { }
 
   ngOnInit() {
