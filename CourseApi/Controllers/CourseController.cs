@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using CourseApi.Models;
 
 namespace CourseApi.Controllers
@@ -232,47 +227,47 @@ namespace CourseApi.Controllers
         }
 
         //Post Admission
-        [HttpPost("course/admission")]
-        public IActionResult AddAdmission([FromBody] Admission admission)
-        {
-            try
-            {
-                if (admission == null)
-                {
-                    return BadRequest("Admission object is null");
-                }
+        // [HttpPost("course/admission")]
+        // public IActionResult AddAdmission([FromBody] Admission admission)
+        // {
+        //     try
+        //     {
+        //         if (admission == null)
+        //         {
+        //             return BadRequest("Admission object is null");
+        //         }
 
-                _db.Admissions.Add(admission);
-                _db.SaveChanges();
+        //         _db.Admissions.Add(admission);
+        //         _db.SaveChanges();
 
-                return CreatedAtAction("GetAdmissions", new { id = admission.AdmissionId }, admission);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
+        //         return CreatedAtAction("GetAdmissions", new { id = admission.AdmissionId }, admission);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return StatusCode(500, $"Internal Server Error: {ex.Message}");
+        //     }
+        // }
 
          //Post Enquiry
-        [HttpPost("course/enquiry")]
-        public async Task<IActionResult> AddEnquiry([FromBody] Enquiry enquiry)
-        {
-            try
-            {
-                if (enquiry == null)
-                {
-                    return BadRequest("Enquiry object is null");
-                }
+        // [HttpPost("course/enquiry")]
+        // public async Task<IActionResult> AddEnquiry([FromBody] Enquiry enquiry)
+        // {
+        //     try
+        //     {
+        //         if (enquiry == null)
+        //         {
+        //             return BadRequest("Enquiry object is null");
+        //         }
 
-                _db.Enquiries.Add(enquiry);
-                await _db.SaveChangesAsync();
-                return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
+        //         _db.Enquiries.Add(enquiry);
+        //         await _db.SaveChangesAsync();
+        //         return CreatedAtAction("GetEnquiries", new { id = enquiry.EnquiryID }, enquiry);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return StatusCode(500, $"Internal Server Error: {ex.Message}");
+        //     }
+        // }
 
       
 
